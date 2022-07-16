@@ -1,6 +1,6 @@
 {
     "name": "PlayMode",
-    "rootNamespace": "",
+    "rootNamespace": "CalangoGames.Tests",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
