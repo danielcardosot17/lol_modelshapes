@@ -32,5 +32,13 @@ namespace CalangoGames.Tests
             
             Assert.AreEqual(expected: 1, actual: gameMasters.Length);
         }
+
+        [Test]
+        public void ThereIsAtLeastOneShapeInScene()
+        {
+            var shapes = Resources.FindObjectsOfTypeAll<Shape>();
+            
+            Assert.AreEqual(expected: 1, actual: shapes.Length);
+        }
     }
 }
