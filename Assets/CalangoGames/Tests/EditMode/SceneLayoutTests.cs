@@ -40,5 +40,14 @@ namespace CalangoGames.Tests
             
             Assert.AreEqual(expected: 1, actual: shapes.Length);
         }
+
+        [Test]
+        public void ThereIsSameNumberOfShapesAndSlotsInScene()
+        {
+            var shapes = Resources.FindObjectsOfTypeAll<Shape>();
+            var shapeSlot = Resources.FindObjectsOfTypeAll<ShapeSlot>();
+            
+            Assert.AreEqual(expected: shapes.Length, actual: shapeSlot.Length);
+        }
     }
 }
