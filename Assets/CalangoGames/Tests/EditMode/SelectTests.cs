@@ -39,6 +39,8 @@ namespace CalangoGames.Tests
         public void WhenPlayerDeselectShapeThenShapeIsDeselected()
         {
             // Assign
+            player.SelectShape(shape);
+            
             // Act
             player.DeselectShape(shape);
 
