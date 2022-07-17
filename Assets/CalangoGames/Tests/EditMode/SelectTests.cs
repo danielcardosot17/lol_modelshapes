@@ -66,7 +66,7 @@ namespace CalangoGames.Tests
         public void WhenPlayerSelectUnselectableShapeThenShapeIsNotSelected()
         {
             // Assign
-            shape.SetSelectable(false);
+            shape.SetNotSelectable();
 
             // Act
             player.SelectShape(shape);

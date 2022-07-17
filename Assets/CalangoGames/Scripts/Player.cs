@@ -11,7 +11,9 @@ namespace CalangoGames
 
         public void SelectShape(Shape shape)
         {
-            if(shape == null || shape == selectedShape) return;
+            if(shape == null) return;
+            if(shape == selectedShape) return;
+            if(!shape.IsSelectable) return;
             // Another shape was selected
             if(selectedShape != null)
             {

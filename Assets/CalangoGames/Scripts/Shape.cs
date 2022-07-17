@@ -7,8 +7,9 @@ namespace CalangoGames
 {
     public class Shape : MonoBehaviour
     {
+        private bool isSelectable = true;
+        public bool IsSelectable { get => isSelectable; }
         private bool isSelected = false;
-
         public bool IsSelected { get => isSelected; }
 
         public void Select()
@@ -19,6 +20,15 @@ namespace CalangoGames
         public void Deselect()
         {
             isSelected = false;
+        }
+
+        public void SetNotSelectable()
+        {
+            isSelectable = false;
+        }
+        public void SetSelectable()
+        {
+            isSelectable = true;
         }
     }
 }
