@@ -74,5 +74,17 @@ namespace CalangoGames.Tests
             // Assert
             Assert.AreEqual(expected: false, actual: shape.IsSelected);
         }
+
+        [Test]
+        public void WhenShapeIsSelectedThenOutlineIsActive()
+        {
+            // Assign
+
+            // Act
+            shape.Select();
+
+            // Assert
+            Assert.AreEqual(expected: true, actual: shape.Outline.activeSelf);
+        }
     }
 }
