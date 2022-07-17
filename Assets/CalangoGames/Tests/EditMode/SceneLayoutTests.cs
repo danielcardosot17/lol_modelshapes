@@ -25,10 +25,12 @@ namespace CalangoGames.Tests
             Assert.AreEqual(expected: 1, actual: audioManagers.Length);
         }
 
-        // [Test]
-        // public void ThereIsOnlyOneGameMasterInScene()
-        // {
+        [Test]
+        public void ThereIsOnlyOneGameMasterInScene()
+        {
+            var gameMasters = Resources.FindObjectsOfTypeAll<GameMaster>();
             
-        // }
+            Assert.AreEqual(expected: 1, actual: gameMasters.Length);
+        }
     }
 }
