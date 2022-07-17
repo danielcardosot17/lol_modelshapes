@@ -45,5 +45,19 @@ namespace CalangoGames.Tests
             // Assert
             Assert.AreEqual(expected: false, actual: shape.IsSelected);
         }
+        
+        [Test]
+        public void WhenPlayerSelectDifferentShapeThenFirstShapeIsDeselected()
+        {
+            // Assign
+            player.SelectShape(shape);
+
+            // Act
+            var newShape = new GameObject().AddComponent<Shape>();
+            player.SelectShape(newShape);
+
+            // Assert
+            Assert.AreEqual(expected: false, actual: shape.IsSelected);
+        }
     }
 }
