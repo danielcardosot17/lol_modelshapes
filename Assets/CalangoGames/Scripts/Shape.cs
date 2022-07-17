@@ -15,5 +15,10 @@ namespace CalangoGames
         {
             isSelected = true;
         }
+
+        public void Deselect()
+        {
+            isSelected = false;
+        }
     }
 }

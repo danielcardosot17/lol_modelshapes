@@ -14,5 +14,11 @@ namespace CalangoGames
             selectedShape = shape;
             shape.Select();
         }
+
+        public void DeselectShape(Shape shape)
+        {
+            selectedShape = null;
+            shape.Deselect();
+        }
     }
 }
