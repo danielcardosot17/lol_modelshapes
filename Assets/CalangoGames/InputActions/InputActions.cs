@@ -15,12 +15,14 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public partial class @InputActions : IInputActionCollection2, IDisposable
+namespace CalangoGames
 {
-    public InputActionAsset asset { get; }
-    public @InputActions()
+    public partial class @InputActions : IInputActionCollection2, IDisposable
     {
-        asset = InputActionAsset.FromJson(@"{
+        public InputActionAsset asset { get; }
+        public @InputActions()
+        {
+            asset = InputActionAsset.FromJson(@"{
     ""name"": ""InputActions"",
     ""maps"": [
         {
@@ -148,147 +150,148 @@ public partial class @InputActions : IInputActionCollection2, IDisposable
         }
     ]
 }");
+            // Player
+            m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+            m_Player_Select = m_Player.FindAction("Select", throwIfNotFound: true);
+            m_Player_SingleTouch = m_Player.FindAction("SingleTouch", throwIfNotFound: true);
+            m_Player_TouchPosition = m_Player.FindAction("TouchPosition", throwIfNotFound: true);
+            m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
+        }
+
+        public void Dispose()
+        {
+            UnityEngine.Object.Destroy(asset);
+        }
+
+        public InputBinding? bindingMask
+        {
+            get => asset.bindingMask;
+            set => asset.bindingMask = value;
+        }
+
+        public ReadOnlyArray<InputDevice>? devices
+        {
+            get => asset.devices;
+            set => asset.devices = value;
+        }
+
+        public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
+
+        public bool Contains(InputAction action)
+        {
+            return asset.Contains(action);
+        }
+
+        public IEnumerator<InputAction> GetEnumerator()
+        {
+            return asset.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public void Enable()
+        {
+            asset.Enable();
+        }
+
+        public void Disable()
+        {
+            asset.Disable();
+        }
+        public IEnumerable<InputBinding> bindings => asset.bindings;
+
+        public InputAction FindAction(string actionNameOrId, bool throwIfNotFound = false)
+        {
+            return asset.FindAction(actionNameOrId, throwIfNotFound);
+        }
+        public int FindBinding(InputBinding bindingMask, out InputAction action)
+        {
+            return asset.FindBinding(bindingMask, out action);
+        }
+
         // Player
-        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Select = m_Player.FindAction("Select", throwIfNotFound: true);
-        m_Player_SingleTouch = m_Player.FindAction("SingleTouch", throwIfNotFound: true);
-        m_Player_TouchPosition = m_Player.FindAction("TouchPosition", throwIfNotFound: true);
-        m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
-    }
-
-    public void Dispose()
-    {
-        UnityEngine.Object.Destroy(asset);
-    }
-
-    public InputBinding? bindingMask
-    {
-        get => asset.bindingMask;
-        set => asset.bindingMask = value;
-    }
-
-    public ReadOnlyArray<InputDevice>? devices
-    {
-        get => asset.devices;
-        set => asset.devices = value;
-    }
-
-    public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
-
-    public bool Contains(InputAction action)
-    {
-        return asset.Contains(action);
-    }
-
-    public IEnumerator<InputAction> GetEnumerator()
-    {
-        return asset.GetEnumerator();
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
-    }
-
-    public void Enable()
-    {
-        asset.Enable();
-    }
-
-    public void Disable()
-    {
-        asset.Disable();
-    }
-    public IEnumerable<InputBinding> bindings => asset.bindings;
-
-    public InputAction FindAction(string actionNameOrId, bool throwIfNotFound = false)
-    {
-        return asset.FindAction(actionNameOrId, throwIfNotFound);
-    }
-    public int FindBinding(InputBinding bindingMask, out InputAction action)
-    {
-        return asset.FindBinding(bindingMask, out action);
-    }
-
-    // Player
-    private readonly InputActionMap m_Player;
-    private IPlayerActions m_PlayerActionsCallbackInterface;
-    private readonly InputAction m_Player_Select;
-    private readonly InputAction m_Player_SingleTouch;
-    private readonly InputAction m_Player_TouchPosition;
-    private readonly InputAction m_Player_MousePosition;
-    public struct PlayerActions
-    {
-        private @InputActions m_Wrapper;
-        public PlayerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Select => m_Wrapper.m_Player_Select;
-        public InputAction @SingleTouch => m_Wrapper.m_Player_SingleTouch;
-        public InputAction @TouchPosition => m_Wrapper.m_Player_TouchPosition;
-        public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
-        public InputActionMap Get() { return m_Wrapper.m_Player; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerActions instance)
+        private readonly InputActionMap m_Player;
+        private IPlayerActions m_PlayerActionsCallbackInterface;
+        private readonly InputAction m_Player_Select;
+        private readonly InputAction m_Player_SingleTouch;
+        private readonly InputAction m_Player_TouchPosition;
+        private readonly InputAction m_Player_MousePosition;
+        public struct PlayerActions
         {
-            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
+            private @InputActions m_Wrapper;
+            public PlayerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Select => m_Wrapper.m_Player_Select;
+            public InputAction @SingleTouch => m_Wrapper.m_Player_SingleTouch;
+            public InputAction @TouchPosition => m_Wrapper.m_Player_TouchPosition;
+            public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
+            public InputActionMap Get() { return m_Wrapper.m_Player; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+            public void SetCallbacks(IPlayerActions instance)
             {
-                @Select.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
-                @Select.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
-                @Select.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
-                @SingleTouch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSingleTouch;
-                @SingleTouch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSingleTouch;
-                @SingleTouch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSingleTouch;
-                @TouchPosition.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
-                @TouchPosition.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
-                @TouchPosition.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
-                @MousePosition.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
-                @MousePosition.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
-                @MousePosition.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
-            }
-            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @Select.started += instance.OnSelect;
-                @Select.performed += instance.OnSelect;
-                @Select.canceled += instance.OnSelect;
-                @SingleTouch.started += instance.OnSingleTouch;
-                @SingleTouch.performed += instance.OnSingleTouch;
-                @SingleTouch.canceled += instance.OnSingleTouch;
-                @TouchPosition.started += instance.OnTouchPosition;
-                @TouchPosition.performed += instance.OnTouchPosition;
-                @TouchPosition.canceled += instance.OnTouchPosition;
-                @MousePosition.started += instance.OnMousePosition;
-                @MousePosition.performed += instance.OnMousePosition;
-                @MousePosition.canceled += instance.OnMousePosition;
+                if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
+                {
+                    @Select.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
+                    @Select.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
+                    @Select.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
+                    @SingleTouch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSingleTouch;
+                    @SingleTouch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSingleTouch;
+                    @SingleTouch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSingleTouch;
+                    @TouchPosition.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
+                    @TouchPosition.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
+                    @TouchPosition.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
+                    @MousePosition.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
+                    @MousePosition.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
+                    @MousePosition.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
+                }
+                m_Wrapper.m_PlayerActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                    @Select.started += instance.OnSelect;
+                    @Select.performed += instance.OnSelect;
+                    @Select.canceled += instance.OnSelect;
+                    @SingleTouch.started += instance.OnSingleTouch;
+                    @SingleTouch.performed += instance.OnSingleTouch;
+                    @SingleTouch.canceled += instance.OnSingleTouch;
+                    @TouchPosition.started += instance.OnTouchPosition;
+                    @TouchPosition.performed += instance.OnTouchPosition;
+                    @TouchPosition.canceled += instance.OnTouchPosition;
+                    @MousePosition.started += instance.OnMousePosition;
+                    @MousePosition.performed += instance.OnMousePosition;
+                    @MousePosition.canceled += instance.OnMousePosition;
+                }
             }
         }
-    }
-    public PlayerActions @Player => new PlayerActions(this);
-    private int m_MouseSchemeIndex = -1;
-    public InputControlScheme MouseScheme
-    {
-        get
+        public PlayerActions @Player => new PlayerActions(this);
+        private int m_MouseSchemeIndex = -1;
+        public InputControlScheme MouseScheme
         {
-            if (m_MouseSchemeIndex == -1) m_MouseSchemeIndex = asset.FindControlSchemeIndex("Mouse");
-            return asset.controlSchemes[m_MouseSchemeIndex];
+            get
+            {
+                if (m_MouseSchemeIndex == -1) m_MouseSchemeIndex = asset.FindControlSchemeIndex("Mouse");
+                return asset.controlSchemes[m_MouseSchemeIndex];
+            }
         }
-    }
-    private int m_TouchSchemeIndex = -1;
-    public InputControlScheme TouchScheme
-    {
-        get
+        private int m_TouchSchemeIndex = -1;
+        public InputControlScheme TouchScheme
         {
-            if (m_TouchSchemeIndex == -1) m_TouchSchemeIndex = asset.FindControlSchemeIndex("Touch");
-            return asset.controlSchemes[m_TouchSchemeIndex];
+            get
+            {
+                if (m_TouchSchemeIndex == -1) m_TouchSchemeIndex = asset.FindControlSchemeIndex("Touch");
+                return asset.controlSchemes[m_TouchSchemeIndex];
+            }
         }
-    }
-    public interface IPlayerActions
-    {
-        void OnSelect(InputAction.CallbackContext context);
-        void OnSingleTouch(InputAction.CallbackContext context);
-        void OnTouchPosition(InputAction.CallbackContext context);
-        void OnMousePosition(InputAction.CallbackContext context);
+        public interface IPlayerActions
+        {
+            void OnSelect(InputAction.CallbackContext context);
+            void OnSingleTouch(InputAction.CallbackContext context);
+            void OnTouchPosition(InputAction.CallbackContext context);
+            void OnMousePosition(InputAction.CallbackContext context);
+        }
     }
 }

@@ -1,9 +1,8 @@
 {
-    "name": "Scripts",
-    "rootNamespace": "CalangoGames",
+    "name": "InputActions",
+    "rootNamespace": "",
     "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:e57d214fa8536634bb3293bc5134a33d"
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
