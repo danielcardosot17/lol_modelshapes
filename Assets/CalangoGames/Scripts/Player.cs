@@ -11,8 +11,14 @@ namespace CalangoGames
 
         public void SelectShape(Shape shape)
         {
-            selectedShape = shape;
-            shape.Select();
+            if(shape == null || shape == selectedShape) return;
+            // Another shape was selected
+            if(selectedShape != null)
+            {
+                selectedShape.Deselect(); // Deselect current shape
+            }
+            selectedShape = shape; // Change selected Shape
+            selectedShape.Select(); // Select shape
         }
 
         public void DeselectShape(Shape shape)
