@@ -61,5 +61,18 @@ namespace CalangoGames.Tests
             // Assert
             Assert.AreEqual(expected: false, actual: shape.IsSelected);
         }
+
+        [Test]
+        public void WhenPlayerSelectUnselectableShapeThenShapeIsNotSelected()
+        {
+            // Assign
+            shape.SetSelectable(false);
+
+            // Act
+            player.SelectShape(shape);
+
+            // Assert
+            Assert.AreEqual(expected: false, actual: shape.IsSelected);
+        }
     }
 }
