@@ -53,7 +53,7 @@ namespace CalangoGames.Tests
 
         // A Test behaves as an ordinary method
         [Test]
-        public void WhenPlayerSelectSlotWithSameTypeSlotBecomesOccupied()
+        public void WhenPlayerSelectSlotWithSameTypeThenSlotBecomesOccupied()
         {
             // Use the Assert class to test conditions
             // Assign
@@ -65,7 +65,7 @@ namespace CalangoGames.Tests
         }
 
         [Test]
-        public void WhenPlayerSelectSlotWithSameTypeShapeIsDeselected()
+        public void WhenPlayerSelectSlotWithSameTypeThenShapeIsDeselected()
         {
             // Use the Assert class to test conditions
             // Assign
@@ -74,6 +74,18 @@ namespace CalangoGames.Tests
             player.SelectSlot(shapeSlot);
             // Assert
             Assert.AreEqual(expected: false, actual: shape.IsSelected);
+        }
+
+        [Test]
+        public void WhenPlayerSelectSlotWithSameTypeThenShapeBecomesUnselectable()
+        {
+            // Use the Assert class to test conditions
+            // Assign
+            
+            // Act
+            player.SelectSlot(shapeSlot);
+            // Assert
+            Assert.AreEqual(expected: false, actual: shape.IsSelectable);
         }
     }
 }
