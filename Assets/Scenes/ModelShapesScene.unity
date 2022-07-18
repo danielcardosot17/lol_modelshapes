@@ -592,6 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shapeType: 0
 --- !u!58 &679923146
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -704,6 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shapeType: 0
 --- !u!58 &937004999
 CircleCollider2D:
   m_ObjectHideFlags: 0

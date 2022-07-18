@@ -135,7 +135,7 @@ namespace CalangoGames.Tests
 
         private bool IsThereEqualNumberOfTypes(Array shapeTypes, List<Shape> shapesInScene, List<ShapeSlot> shapeSlotInScene)
         {
-            foreach(var shapeType in shapeTypes)
+            foreach(ShapeType shapeType in shapeTypes)
             {
                 if(GetNumberOfShapesOfType(shapeType, shapesInScene) != GetNumberOfSlotsOfType(shapeType, shapeSlotInScene))
                 {
@@ -145,7 +145,7 @@ namespace CalangoGames.Tests
             return true;
         }
 
-        private int GetNumberOfSlotsOfType(object shapeType, List<ShapeSlot> shapeSlotInScene)
+        private int GetNumberOfSlotsOfType(ShapeType shapeType, List<ShapeSlot> shapeSlotInScene)
         {
             int numberOfSlotsOfType = 0;
             foreach(var slot in shapeSlotInScene)
@@ -158,7 +158,7 @@ namespace CalangoGames.Tests
             return numberOfSlotsOfType;
         }
 
-        private int GetNumberOfShapesOfType(object shapeType, List<Shape> shapesInScene)
+        private int GetNumberOfShapesOfType(ShapeType shapeType, List<Shape> shapesInScene)
         {
             int numberOfShapesOfType = 0;
             foreach(var shape in shapesInScene)
