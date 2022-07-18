@@ -8,6 +8,7 @@ namespace CalangoGames
 {
     public class Player : MonoBehaviour
     {
+        [SerializeField][Range(0.1f, 2f)] private float moveSmoothTime = 0.5f;
         private Shape selectedShape;
         private InputActions inputActions;
         private InputActionAsset asdasdas;
@@ -82,7 +83,7 @@ namespace CalangoGames
                 {
                     SelectShape(hit2D.collider.gameObject.GetComponent<Shape>());
                 }
-                if(hit2D.collider.gameObject.GetComponent<ShapeSlot>() != null) // is a Shape!
+                if(hit2D.collider.gameObject.GetComponent<ShapeSlot>() != null) // is a ShapeSlot!
                 {
                     SelectSlot(hit2D.collider.gameObject.GetComponent<ShapeSlot>());
                 }
@@ -113,9 +114,23 @@ namespace CalangoGames
             if(selectedShape.ShapeType == shapeSlot.ShapeType)
             {
                 shapeSlot.Occupy();
+                Shape shape = selectedShape;
+                StartCoroutine(MoveShapeToSlot(shape, shapeSlot));
                 selectedShape.SetNotSelectable();
                 DeselectShape();
             }
+        }
+
+        private IEnumerator MoveShapeToSlot(Shape shape, ShapeSlot shapeSlot)
+        {
+            var endPosition = shapeSlot.transform.position;
+            Vector3 velocity = Vector3.zero;
+            while(Vector3.Distance(shape.transform.position, endPosition) > 0.1f)
+            {
+                shape.transform.position = Vector3.SmoothDamp(shape.transform.position, endPosition, ref velocity, moveSmoothTime);
+                yield return null;
+            }
+            shape.transform.position = endPosition;
         }
 
         public void DeselectShape()
