@@ -22,7 +22,6 @@ namespace CalangoGames
         private Camera mainCamera;
 
         private void Awake() {
-            Debug.Log("Awake");
             mainCamera = Camera.main;
             inputActions = new InputActions();
             clickAction = inputActions.Player.Click;
@@ -33,7 +32,6 @@ namespace CalangoGames
         }
 
         private void OnEnable() {
-            Debug.Log("OnEnable");
             clickAction.performed += OnClick;
             tapAction.performed += OnTap;
             touchAction.performed += OnTouchStart;
@@ -52,13 +50,13 @@ namespace CalangoGames
         private void OnTouchEnd(InputAction.CallbackContext obj)
         {
             isTouching = false;
-            Debug.Log("OnTouchEnd");
         }
 
         private void OnTouchStart(InputAction.CallbackContext obj)
         {
-            isTouching = true;
             Debug.Log("OnTouchStart");
+            isTouching = true;
+            ClickOrTapToRay(touchPosition.ReadValue<Vector2>());
         }
 
         private void OnClick(InputAction.CallbackContext obj)
@@ -70,18 +68,20 @@ namespace CalangoGames
         private void OnTap(InputAction.CallbackContext obj)
         {
             Debug.Log("OnTap");
-            ClickOrTapToRay(touchPosition.ReadValue<Vector2>());
         }
 
         private void ClickOrTapToRay(Vector3 screenPoint)
         {
+            Debug.Log(screenPoint);
             Ray ray = mainCamera.ScreenPointToRay(screenPoint);
             RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
             if(hit2D.collider != null) // hit something
             {
                 if(hit2D.collider.gameObject.GetComponent<Shape>() != null) // is a Shape!
                 {
-                    SelectShape(hit2D.collider.gameObject.GetComponent<Shape>());
+                    var shape = hit2D.collider.gameObject.GetComponent<Shape>();
+                    SelectShape(shape);
+                    StartCoroutine(DragUpdate(shape));
                 }
                 if(hit2D.collider.gameObject.GetComponent<ShapeSlot>() != null) // is a ShapeSlot!
                 {
@@ -89,6 +89,30 @@ namespace CalangoGames
                 }
             }
         }
+
+        private IEnumerator DragUpdate(Shape shape)
+        {
+            Debug.Log("Start Dragging");
+            Vector3 velocity = Vector3.zero;
+            Ray ray = new Ray();
+            
+            while(clickAction.ReadValue<float>() != 0 || isTouching)
+            {
+                if(isTouching)
+                {
+                    ray = mainCamera.ScreenPointToRay(touchPosition.ReadValue<Vector2>());
+                }
+                else{
+                    ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+                }
+                Debug.Log("ray.origin");
+                Debug.Log(ray.origin);
+                Vector3 direction = Vector3.ProjectOnPlane(ray.origin, Vector3.forward);
+                shape.transform.position = Vector3.SmoothDamp(shape.transform.position, direction, ref velocity, moveSmoothTime/5);
+                yield return null;
+            }
+        }
+
 
         public void SelectShape(Shape shape)
         {
