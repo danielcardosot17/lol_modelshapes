@@ -45,7 +45,7 @@ namespace CalangoGames.Tests
             player.SelectShape(shape);
             
             // Act
-            player.DeselectShape(shape);
+            player.DeselectShape();
 
             // Assert
             Assert.AreEqual(expected: false, actual: shape.IsSelected);

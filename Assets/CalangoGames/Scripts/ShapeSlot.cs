@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,5 +14,10 @@ namespace CalangoGames
         public bool IsOccupied { get => isOccupied; }
 
         public ShapeType ShapeType { get => shapeType; set => shapeType = value; }
+
+        public void Occupy()
+        {
+            isOccupied = true;
+        }
     }
 }

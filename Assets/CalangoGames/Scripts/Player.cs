@@ -99,10 +99,23 @@ namespace CalangoGames
             selectedShape.Select(); // Select shape
         }
 
-        public void DeselectShape(Shape shape)
+
+        public void SelectSlot(ShapeSlot shapeSlot)
         {
+            if(shapeSlot == null) return;
+            if(shapeSlot.IsOccupied) return;
+            if(selectedShape == null) return;
+            
+            if(selectedShape.ShapeType == shapeSlot.ShapeType)
+            {
+                shapeSlot.Occupy();
+            }
+
+        }
+        public void DeselectShape()
+        {
+            selectedShape.Deselect();
             selectedShape = null;
-            shape.Deselect();
         }
     }
 }
