@@ -63,5 +63,17 @@ namespace CalangoGames.Tests
             // Assert
             Assert.AreEqual(expected: true, actual: shapeSlot.IsOccupied);
         }
+
+        [Test]
+        public void WhenPlayerSelectSlotWithSameTypeShapeIsDeselected()
+        {
+            // Use the Assert class to test conditions
+            // Assign
+            
+            // Act
+            player.SelectSlot(shapeSlot);
+            // Assert
+            Assert.AreEqual(expected: false, actual: shape.IsSelected);
+        }
     }
 }
