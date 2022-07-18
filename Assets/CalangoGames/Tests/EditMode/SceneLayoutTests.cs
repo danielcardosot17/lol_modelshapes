@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
@@ -107,6 +108,67 @@ namespace CalangoGames.Tests
                     shapeOutlinesInScene.Add(shapeOutline);
             }
             Assert.AreEqual(expected: shapesInScene.Count, actual: shapeOutlinesInScene.Count);
+        }
+
+        [Test]
+        public void ThereIsSameNumberOfShapesAndSlotsOfSameTypeInScene()
+        {
+            List<Shape> shapesInScene = new List<Shape>();
+
+            foreach (Shape shape in Resources.FindObjectsOfTypeAll(typeof(Shape)) as Shape[])
+            {
+                if (!EditorUtility.IsPersistent(shape.transform.root.gameObject) && !(shape.hideFlags == HideFlags.NotEditable || shape.hideFlags == HideFlags.HideAndDontSave))
+                    shapesInScene.Add(shape);
+            }
+            
+            List<ShapeSlot> shapeSlotInScene = new List<ShapeSlot>();
+
+            foreach (ShapeSlot shapeSlot in Resources.FindObjectsOfTypeAll(typeof(ShapeSlot)) as ShapeSlot[])
+            {
+                if (!EditorUtility.IsPersistent(shapeSlot.transform.root.gameObject) && !(shapeSlot.hideFlags == HideFlags.NotEditable || shapeSlot.hideFlags == HideFlags.HideAndDontSave))
+                    shapeSlotInScene.Add(shapeSlot);
+            }
+            var shapeTypes = System.Enum.GetValues(typeof(ShapeType));
+            
+            Assert.AreEqual(expected: true, actual: IsThereEqualNumberOfTypes(shapeTypes, shapesInScene, shapeSlotInScene));
+        }
+
+        private bool IsThereEqualNumberOfTypes(Array shapeTypes, List<Shape> shapesInScene, List<ShapeSlot> shapeSlotInScene)
+        {
+            foreach(var shapeType in shapeTypes)
+            {
+                if(GetNumberOfShapesOfType(shapeType, shapesInScene) != GetNumberOfSlotsOfType(shapeType, shapeSlotInScene))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private int GetNumberOfSlotsOfType(object shapeType, List<ShapeSlot> shapeSlotInScene)
+        {
+            int numberOfSlotsOfType = 0;
+            foreach(var slot in shapeSlotInScene)
+            {
+                if(slot.ShapeType == shapeType)
+                {
+                    numberOfSlotsOfType++;
+                }
+            }
+            return numberOfSlotsOfType;
+        }
+
+        private int GetNumberOfShapesOfType(object shapeType, List<Shape> shapesInScene)
+        {
+            int numberOfShapesOfType = 0;
+            foreach(var shape in shapesInScene)
+            {
+                if(shape.ShapeType == shapeType)
+                {
+                    numberOfShapesOfType++;
+                }
+            }
+            return numberOfShapesOfType;
         }
     }
 }

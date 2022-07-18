@@ -9,6 +9,7 @@ namespace CalangoGames
     [RequireComponent(typeof(Collider2D))]
     public class Shape : MonoBehaviour
     {
+        [SerializeField] private ShapeType shapeType;
         private bool isSelectable = true;
         public bool IsSelectable { get => isSelectable; }
         private bool isSelected = false;
