@@ -28,6 +28,20 @@ namespace CalangoGames.Tests
         }
         
         [UnityTest]
+        public IEnumerator WhenStartGameThenOutlineIsNotActive()
+        {
+            // Use the Assert class to test conditions.
+            // Use yield to skip a frame.
+            // Assign
+
+            // Act
+
+            yield return null;
+            // Assert
+            Assert.AreEqual(expected: false, actual: shape.Outline.IsOn());
+        }
+
+        [UnityTest]
         public IEnumerator WhenShapeIsSelectedThenOutlineIsActive()
         {
             // Use the Assert class to test conditions.
@@ -39,21 +53,7 @@ namespace CalangoGames.Tests
 
             yield return null;
             // Assert
-            Assert.AreEqual(expected: true, actual: shape.Outline.IsActive());
-        }
-
-        [UnityTest]
-        public IEnumerator WhenStartGameThenOutlineIsNotActive()
-        {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            // Assign
-
-            // Act
-
-            yield return null;
-            // Assert
-            Assert.AreEqual(expected: false, actual: shape.Outline.IsActive());
+            Assert.AreEqual(expected: true, actual: shape.Outline.IsOn());
         }
     }
 }

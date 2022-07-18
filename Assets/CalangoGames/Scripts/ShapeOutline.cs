@@ -5,12 +5,28 @@ using UnityEngine;
 
 namespace CalangoGames
 {
+    [RequireComponent(typeof(SpriteRenderer))]
     public class ShapeOutline : MonoBehaviour
     {
+        private SpriteRenderer spriteRenderer;
+        private void Awake() {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            Disable();
+        }
 
-        public bool IsActive()
+        public void Disable()
         {
-            return gameObject.activeSelf;
+            spriteRenderer.enabled = false;
+        }
+
+        public void Enable()
+        {
+            spriteRenderer.enabled = true;
+        }
+
+        public bool IsOn()
+        {
+            return spriteRenderer.enabled;
         }
     }
 }
