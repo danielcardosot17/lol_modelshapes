@@ -63,7 +63,18 @@ namespace CalangoGames
         private void OnClick(InputAction.CallbackContext obj)
         {
             Debug.Log("OnClick");
+            Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+            if(hit2D.collider != null) // hit something
+            {
+                if(hit2D.collider.gameObject.GetComponent<Shape>() != null) // is a Shape!
+                {
+                    SelectShape(hit2D.collider.gameObject.GetComponent<Shape>());
+                }
+            }
+            
         }
+
         private void OnTap(InputAction.CallbackContext obj)
         {
             Debug.Log("OnTap");
