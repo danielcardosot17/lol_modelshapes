@@ -17,8 +17,11 @@ namespace CalangoGames
         private InputAction mousePositionAction;
         private bool isTouching = false;
 
+        private Camera mainCamera;
+
         private void Awake() {
             Debug.Log("Awake");
+            mainCamera = Camera.main;
             inputActions = new InputActions();
             selectAction = inputActions.Player.Select;
             singleTouchAction = inputActions.Player.SingleTouch;
