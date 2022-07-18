@@ -109,6 +109,7 @@ namespace CalangoGames
             if(selectedShape.ShapeType == shapeSlot.ShapeType)
             {
                 shapeSlot.Occupy();
+                selectedShape.SetNotSelectable();
                 DeselectShape();
             }
 
