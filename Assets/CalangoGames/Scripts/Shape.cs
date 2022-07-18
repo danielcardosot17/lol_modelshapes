@@ -11,6 +11,12 @@ namespace CalangoGames
         public bool IsSelectable { get => isSelectable; }
         private bool isSelected = false;
         public bool IsSelected { get => isSelected; }
+        private ShapeOutline outline;
+        public ShapeOutline Outline { get => outline; }
+
+        private void Start() {
+            outline = GetComponentInChildren<ShapeOutline>();
+        }
 
         public void Select()
         {
