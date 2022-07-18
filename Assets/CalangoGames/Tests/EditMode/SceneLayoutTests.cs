@@ -27,34 +27,65 @@ namespace CalangoGames.Tests
         [Test]
         public void ThereIsOnlyOneAudioManagerInScene()
         {
-            var audioManagers = Resources.FindObjectsOfTypeAll<AudioManager>();
+            List<AudioManager> audioManagersInScene = new List<AudioManager>();
+
+            foreach (AudioManager audioManager in Resources.FindObjectsOfTypeAll(typeof(AudioManager)) as AudioManager[])
+            {
+                if (!EditorUtility.IsPersistent(audioManager.transform.root.gameObject) && !(audioManager.hideFlags == HideFlags.NotEditable || audioManager.hideFlags == HideFlags.HideAndDontSave))
+                    audioManagersInScene.Add(audioManager);
+            }
             
-            Assert.AreEqual(expected: 1, actual: audioManagers.Length);
+            Assert.AreEqual(expected: 1, actual: audioManagersInScene.Count);
         }
 
         [Test]
         public void ThereIsOnlyOneGameMasterInScene()
         {
-            var gameMasters = Resources.FindObjectsOfTypeAll<GameMaster>();
+            List<GameMaster> gameMastersInScene = new List<GameMaster>();
+
+            foreach (GameMaster gameMaster in Resources.FindObjectsOfTypeAll(typeof(GameMaster)) as GameMaster[])
+            {
+                if (!EditorUtility.IsPersistent(gameMaster.transform.root.gameObject) && !(gameMaster.hideFlags == HideFlags.NotEditable || gameMaster.hideFlags == HideFlags.HideAndDontSave))
+                    gameMastersInScene.Add(gameMaster);
+            }
             
-            Assert.AreEqual(expected: 1, actual: gameMasters.Length);
+            Assert.AreEqual(expected: 1, actual: gameMastersInScene.Count);
         }
 
         [Test]
         public void ThereIsAtLeastOneShapeInScene()
         {
-            var shapes = Resources.FindObjectsOfTypeAll<Shape>();
+
+            List<Shape> shapesInScene = new List<Shape>();
+
+            foreach (Shape shape in Resources.FindObjectsOfTypeAll(typeof(Shape)) as Shape[])
+            {
+                if (!EditorUtility.IsPersistent(shape.transform.root.gameObject) && !(shape.hideFlags == HideFlags.NotEditable || shape.hideFlags == HideFlags.HideAndDontSave))
+                    shapesInScene.Add(shape);
+            }
             
-            Assert.AreEqual(expected: 1, actual: shapes.Length);
+            Assert.Greater(shapesInScene.Count, 0);
         }
 
         [Test]
         public void ThereIsSameNumberOfShapesAndSlotsInScene()
         {
-            var shapes = Resources.FindObjectsOfTypeAll<Shape>();
-            var shapeSlot = Resources.FindObjectsOfTypeAll<ShapeSlot>();
+            List<Shape> shapesInScene = new List<Shape>();
+
+            foreach (Shape shape in Resources.FindObjectsOfTypeAll(typeof(Shape)) as Shape[])
+            {
+                if (!EditorUtility.IsPersistent(shape.transform.root.gameObject) && !(shape.hideFlags == HideFlags.NotEditable || shape.hideFlags == HideFlags.HideAndDontSave))
+                    shapesInScene.Add(shape);
+            }
             
-            Assert.AreEqual(expected: shapes.Length, actual: shapeSlot.Length);
+            List<ShapeSlot> shapeSlotInScene = new List<ShapeSlot>();
+
+            foreach (ShapeSlot shapeSlot in Resources.FindObjectsOfTypeAll(typeof(ShapeSlot)) as ShapeSlot[])
+            {
+                if (!EditorUtility.IsPersistent(shapeSlot.transform.root.gameObject) && !(shapeSlot.hideFlags == HideFlags.NotEditable || shapeSlot.hideFlags == HideFlags.HideAndDontSave))
+                    shapeSlotInScene.Add(shapeSlot);
+            }
+            Assert.AreEqual(expected: shapesInScene.Count, actual: shapeSlotInScene.Count);
         }
     }
 }
