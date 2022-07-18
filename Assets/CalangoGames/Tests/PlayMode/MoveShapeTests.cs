@@ -43,7 +43,6 @@ namespace CalangoGames.Tests
             yield return null;
             // Assert
             Assert.AreEqual(expected: Vector3.up, actual: shape.transform.position);
-
         }
     }
 }

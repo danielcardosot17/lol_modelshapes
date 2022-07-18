@@ -11,8 +11,9 @@ namespace CalangoGames
         private Shape selectedShape;
         private InputActions inputActions;
         private InputActionAsset asdasdas;
-        private InputAction selectAction;
-        private InputAction singleTouchAction;
+        private InputAction clickAction;
+        private InputAction tapAction;
+        private InputAction touchAction;
         private InputAction touchPositionAction;
         private InputAction mousePositionAction;
         private bool isTouching = false;
@@ -23,24 +24,27 @@ namespace CalangoGames
             Debug.Log("Awake");
             mainCamera = Camera.main;
             inputActions = new InputActions();
-            selectAction = inputActions.Player.Select;
-            singleTouchAction = inputActions.Player.SingleTouch;
+            clickAction = inputActions.Player.Click;
+            tapAction = inputActions.Player.Tap;
+            touchAction = inputActions.Player.Touch;
             touchPositionAction = inputActions.Player.TouchPosition;
             mousePositionAction = inputActions.Player.MousePosition;
         }
 
         private void OnEnable() {
             Debug.Log("OnEnable");
-            selectAction.performed += Select;
-            singleTouchAction.performed += OnTouchStart;
-            singleTouchAction.canceled += OnTouchEnd;
+            clickAction.performed += OnClick;
+            tapAction.performed += OnTap;
+            touchAction.performed += OnTouchStart;
+            touchAction.canceled += OnTouchEnd;
             inputActions.Player.Enable();
         }
 
         private void OnDisable() {
-            selectAction.performed -= Select;
-            singleTouchAction.performed -= OnTouchStart;
-            singleTouchAction.canceled -= OnTouchEnd;
+            clickAction.performed -= OnClick;
+            tapAction.performed -= OnTap;
+            touchAction.performed -= OnTouchStart;
+            touchAction.canceled -= OnTouchEnd;
             inputActions.Player.Disable();
         }
 
@@ -56,9 +60,13 @@ namespace CalangoGames
             Debug.Log("OnTouchStart");
         }
 
-        private void Select(InputAction.CallbackContext obj)
+        private void OnClick(InputAction.CallbackContext obj)
         {
-            Debug.Log("Select");
+            Debug.Log("OnClick");
+        }
+        private void OnTap(InputAction.CallbackContext obj)
+        {
+            Debug.Log("OnTap");
         }
 
         public void SelectShape(Shape shape)

@@ -30,7 +30,7 @@ namespace CalangoGames
             ""id"": ""8002902f-867b-4d69-bcf4-27e891523da5"",
             ""actions"": [
                 {
-                    ""name"": ""Select"",
+                    ""name"": ""Click"",
                     ""type"": ""Button"",
                     ""id"": ""6bb95805-880c-4b6a-b8c7-5e41987d302c"",
                     ""expectedControlType"": ""Button"",
@@ -39,7 +39,7 @@ namespace CalangoGames
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SingleTouch"",
+                    ""name"": ""Touch"",
                     ""type"": ""Button"",
                     ""id"": ""32f6ae28-6a00-486a-9411-6d653fc68350"",
                     ""expectedControlType"": ""Button"",
@@ -64,6 +64,15 @@ namespace CalangoGames
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Tap"",
+                    ""type"": ""Button"",
+                    ""id"": ""afd720f7-7031-40b7-b21b-91a70dabb3a0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -74,18 +83,7 @@ namespace CalangoGames
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""256230a9-32e9-497b-97df-7b6509ddc692"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Touch"",
-                    ""action"": ""Select"",
+                    ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -96,7 +94,7 @@ namespace CalangoGames
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Touch"",
-                    ""action"": ""SingleTouch"",
+                    ""action"": ""Touch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -119,6 +117,17 @@ namespace CalangoGames
                     ""processors"": """",
                     ""groups"": ""Mouse"",
                     ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3750d49-28e7-4725-bf99-8e590664f5b0"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""Tap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -152,10 +161,11 @@ namespace CalangoGames
 }");
             // Player
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-            m_Player_Select = m_Player.FindAction("Select", throwIfNotFound: true);
-            m_Player_SingleTouch = m_Player.FindAction("SingleTouch", throwIfNotFound: true);
+            m_Player_Click = m_Player.FindAction("Click", throwIfNotFound: true);
+            m_Player_Touch = m_Player.FindAction("Touch", throwIfNotFound: true);
             m_Player_TouchPosition = m_Player.FindAction("TouchPosition", throwIfNotFound: true);
             m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
+            m_Player_Tap = m_Player.FindAction("Tap", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -215,18 +225,20 @@ namespace CalangoGames
         // Player
         private readonly InputActionMap m_Player;
         private IPlayerActions m_PlayerActionsCallbackInterface;
-        private readonly InputAction m_Player_Select;
-        private readonly InputAction m_Player_SingleTouch;
+        private readonly InputAction m_Player_Click;
+        private readonly InputAction m_Player_Touch;
         private readonly InputAction m_Player_TouchPosition;
         private readonly InputAction m_Player_MousePosition;
+        private readonly InputAction m_Player_Tap;
         public struct PlayerActions
         {
             private @InputActions m_Wrapper;
             public PlayerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Select => m_Wrapper.m_Player_Select;
-            public InputAction @SingleTouch => m_Wrapper.m_Player_SingleTouch;
+            public InputAction @Click => m_Wrapper.m_Player_Click;
+            public InputAction @Touch => m_Wrapper.m_Player_Touch;
             public InputAction @TouchPosition => m_Wrapper.m_Player_TouchPosition;
             public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
+            public InputAction @Tap => m_Wrapper.m_Player_Tap;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -236,34 +248,40 @@ namespace CalangoGames
             {
                 if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
                 {
-                    @Select.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
-                    @Select.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
-                    @Select.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSelect;
-                    @SingleTouch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSingleTouch;
-                    @SingleTouch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSingleTouch;
-                    @SingleTouch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSingleTouch;
+                    @Click.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClick;
+                    @Click.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClick;
+                    @Click.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnClick;
+                    @Touch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouch;
+                    @Touch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouch;
+                    @Touch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouch;
                     @TouchPosition.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
                     @TouchPosition.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
                     @TouchPosition.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
                     @MousePosition.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
                     @MousePosition.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
                     @MousePosition.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
+                    @Tap.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTap;
+                    @Tap.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTap;
+                    @Tap.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTap;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
                 {
-                    @Select.started += instance.OnSelect;
-                    @Select.performed += instance.OnSelect;
-                    @Select.canceled += instance.OnSelect;
-                    @SingleTouch.started += instance.OnSingleTouch;
-                    @SingleTouch.performed += instance.OnSingleTouch;
-                    @SingleTouch.canceled += instance.OnSingleTouch;
+                    @Click.started += instance.OnClick;
+                    @Click.performed += instance.OnClick;
+                    @Click.canceled += instance.OnClick;
+                    @Touch.started += instance.OnTouch;
+                    @Touch.performed += instance.OnTouch;
+                    @Touch.canceled += instance.OnTouch;
                     @TouchPosition.started += instance.OnTouchPosition;
                     @TouchPosition.performed += instance.OnTouchPosition;
                     @TouchPosition.canceled += instance.OnTouchPosition;
                     @MousePosition.started += instance.OnMousePosition;
                     @MousePosition.performed += instance.OnMousePosition;
                     @MousePosition.canceled += instance.OnMousePosition;
+                    @Tap.started += instance.OnTap;
+                    @Tap.performed += instance.OnTap;
+                    @Tap.canceled += instance.OnTap;
                 }
             }
         }
@@ -288,10 +306,11 @@ namespace CalangoGames
         }
         public interface IPlayerActions
         {
-            void OnSelect(InputAction.CallbackContext context);
-            void OnSingleTouch(InputAction.CallbackContext context);
+            void OnClick(InputAction.CallbackContext context);
+            void OnTouch(InputAction.CallbackContext context);
             void OnTouchPosition(InputAction.CallbackContext context);
             void OnMousePosition(InputAction.CallbackContext context);
+            void OnTap(InputAction.CallbackContext context);
         }
     }
 }
