@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.TestTools;
 
@@ -12,9 +13,15 @@ namespace CalangoGames.Tests
         [Test]
         public void ThereIsOnlyOnePlayerInScene()
         {
-            var players = Resources.FindObjectsOfTypeAll<Player>();
+            List<Player> playersInScene = new List<Player>();
+
+            foreach (Player player in Resources.FindObjectsOfTypeAll(typeof(Player)) as Player[])
+            {
+                if (!EditorUtility.IsPersistent(player.transform.root.gameObject) && !(player.hideFlags == HideFlags.NotEditable || player.hideFlags == HideFlags.HideAndDontSave))
+                    playersInScene.Add(player);
+            }
             
-            Assert.AreEqual(expected: 1, actual: players.Length);
+            Assert.AreEqual(expected: 1, actual: playersInScene.Count);
         }
 
         [Test]

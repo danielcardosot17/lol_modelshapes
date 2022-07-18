@@ -21,7 +21,7 @@ namespace CalangoGames
         public void Select()
         {
             isSelected = true;
-            outline.Enable();
+            outline?.Enable();
         }
 
         public void Deselect()
