@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace CalangoGames
 {
+    [RequireComponent(typeof(SpriteRenderer))]
+    [RequireComponent(typeof(Collider2D))]
     public class ShapeSlot : MonoBehaviour
     {
         // Start is called before the first frame update

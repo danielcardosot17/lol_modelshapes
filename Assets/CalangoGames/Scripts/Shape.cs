@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace CalangoGames
 {
+    [RequireComponent(typeof(SpriteRenderer))]
+    [RequireComponent(typeof(Collider2D))]
     public class Shape : MonoBehaviour
     {
         private bool isSelectable = true;

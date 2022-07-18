@@ -34,6 +34,13 @@ namespace CalangoGames
             inputActions.Player.Enable();
         }
 
+        private void OnDisable() {
+            selectAction.performed -= Select;
+            singleTouchAction.performed -= OnTouchStart;
+            singleTouchAction.canceled -= OnTouchEnd;
+            inputActions.Player.Disable();
+        }
+
         private void OnTouchEnd(InputAction.CallbackContext obj)
         {
             isTouching = false;
