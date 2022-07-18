@@ -10,7 +10,8 @@ namespace CalangoGames
     {
         [SerializeField] private ShapeType shapeType;
         private bool isOccupied = false;
+        public bool IsOccupied { get => isOccupied; }
 
-        public ShapeType ShapeType { get => shapeType; }
+        public ShapeType ShapeType { get => shapeType; set => shapeType = value; }
     }
 }
