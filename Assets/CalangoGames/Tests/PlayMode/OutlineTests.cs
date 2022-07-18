@@ -16,8 +16,16 @@ namespace CalangoGames.Tests
         public void BeforeEveryTest()
         {
             player = new GameObject().AddComponent<Player>();
-            shape = new GameObject().AddComponent<Shape>();
-            outline = new GameObject().AddComponent<ShapeOutline>();
+            
+            var obj = new GameObject();
+            obj.AddComponent<SpriteRenderer>();
+            obj.AddComponent<BoxCollider2D>();
+            shape = obj.AddComponent<Shape>();
+
+            var obj2 = new GameObject();
+            obj2.AddComponent<SpriteRenderer>();
+            obj2.AddComponent<BoxCollider2D>();
+            outline = obj2.AddComponent<ShapeOutline>();
             outline.transform.parent = shape.transform;
         }
 

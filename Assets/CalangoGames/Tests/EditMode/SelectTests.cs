@@ -15,7 +15,10 @@ namespace CalangoGames.Tests
         public void BeforeEveryTest()
         {
             player = new GameObject().AddComponent<Player>();
-            shape = new GameObject().AddComponent<Shape>();
+            var obj = new GameObject();
+            obj.AddComponent<SpriteRenderer>();
+            obj.AddComponent<BoxCollider2D>();
+            shape = obj.AddComponent<Shape>();
         }
 
         [TearDown]
@@ -55,7 +58,11 @@ namespace CalangoGames.Tests
             player.SelectShape(shape);
 
             // Act
-            var newShape = new GameObject().AddComponent<Shape>();
+            var obj = new GameObject();
+            obj.AddComponent<SpriteRenderer>();
+            obj.AddComponent<BoxCollider2D>();
+            var newShape  = obj.AddComponent<Shape>();
+            
             player.SelectShape(newShape);
 
             // Assert

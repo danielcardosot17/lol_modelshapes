@@ -36,6 +36,12 @@ namespace CalangoGames
         {
             isSelectable = false;
         }
+
+        public void Move(Vector3 direction)
+        {
+            transform.position = direction;
+        }
+
         public void SetSelectable()
         {
             isSelectable = true;
