@@ -82,6 +82,10 @@ namespace CalangoGames
                 {
                     SelectShape(hit2D.collider.gameObject.GetComponent<Shape>());
                 }
+                if(hit2D.collider.gameObject.GetComponent<ShapeSlot>() != null) // is a Shape!
+                {
+                    SelectSlot(hit2D.collider.gameObject.GetComponent<ShapeSlot>());
+                }
             }
         }
 
@@ -112,8 +116,8 @@ namespace CalangoGames
                 selectedShape.SetNotSelectable();
                 DeselectShape();
             }
-
         }
+
         public void DeselectShape()
         {
             selectedShape.Deselect();
