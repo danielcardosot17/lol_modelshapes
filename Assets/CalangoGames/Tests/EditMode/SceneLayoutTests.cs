@@ -87,5 +87,26 @@ namespace CalangoGames.Tests
             }
             Assert.AreEqual(expected: shapesInScene.Count, actual: shapeSlotInScene.Count);
         }
+
+        [Test]
+        public void ThereIsSameNumberOfShapesAndOutlinesInScene()
+        {
+            List<Shape> shapesInScene = new List<Shape>();
+
+            foreach (Shape shape in Resources.FindObjectsOfTypeAll(typeof(Shape)) as Shape[])
+            {
+                if (!EditorUtility.IsPersistent(shape.transform.root.gameObject) && !(shape.hideFlags == HideFlags.NotEditable || shape.hideFlags == HideFlags.HideAndDontSave))
+                    shapesInScene.Add(shape);
+            }
+            
+            List<ShapeOutline> shapeOutlinesInScene = new List<ShapeOutline>();
+
+            foreach (ShapeOutline shapeOutline in Resources.FindObjectsOfTypeAll(typeof(ShapeOutline)) as ShapeOutline[])
+            {
+                if (!EditorUtility.IsPersistent(shapeOutline.transform.root.gameObject) && !(shapeOutline.hideFlags == HideFlags.NotEditable || shapeOutline.hideFlags == HideFlags.HideAndDontSave))
+                    shapeOutlinesInScene.Add(shapeOutline);
+            }
+            Assert.AreEqual(expected: shapesInScene.Count, actual: shapeOutlinesInScene.Count);
+        }
     }
 }
