@@ -14,8 +14,8 @@ namespace CalangoGames
         private InputAction clickAction;
         private InputAction tapAction;
         private InputAction touchAction;
-        private InputAction touchPositionAction;
-        private InputAction mousePositionAction;
+        private InputAction touchPosition;
+        private InputAction mousePosition;
         private bool isTouching = false;
 
         private Camera mainCamera;
@@ -27,8 +27,8 @@ namespace CalangoGames
             clickAction = inputActions.Player.Click;
             tapAction = inputActions.Player.Tap;
             touchAction = inputActions.Player.Touch;
-            touchPositionAction = inputActions.Player.TouchPosition;
-            mousePositionAction = inputActions.Player.MousePosition;
+            touchPosition = inputActions.Player.TouchPosition;
+            mousePosition = inputActions.Player.MousePosition;
         }
 
         private void OnEnable() {
@@ -72,12 +72,20 @@ namespace CalangoGames
                     SelectShape(hit2D.collider.gameObject.GetComponent<Shape>());
                 }
             }
-            
         }
 
         private void OnTap(InputAction.CallbackContext obj)
         {
             Debug.Log("OnTap");
+            Ray ray = mainCamera.ScreenPointToRay(touchPosition.ReadValue<Vector2>());
+            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+            if(hit2D.collider != null) // hit something
+            {
+                if(hit2D.collider.gameObject.GetComponent<Shape>() != null) // is a Shape!
+                {
+                    SelectShape(hit2D.collider.gameObject.GetComponent<Shape>());
+                }
+            }
         }
 
         public void SelectShape(Shape shape)
