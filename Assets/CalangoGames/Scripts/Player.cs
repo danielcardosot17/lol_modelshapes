@@ -81,7 +81,7 @@ namespace CalangoGames
                 {
                     var shape = hit2D.collider.gameObject.GetComponent<Shape>();
                     SelectShape(shape);
-                    StartCoroutine(DragUpdate(shape));
+                    StartCoroutine(DragUpdate(hit2D.collider));
                 }
                 if(hit2D.collider.gameObject.GetComponent<ShapeSlot>() != null) // is a ShapeSlot!
                 {
@@ -90,7 +90,7 @@ namespace CalangoGames
             }
         }
 
-        private IEnumerator DragUpdate(Shape shape)
+        private IEnumerator DragUpdate(Collider2D collider)
         {
             Debug.Log("Start Dragging");
             Vector3 velocity = Vector3.zero;
@@ -108,11 +108,27 @@ namespace CalangoGames
                 Debug.Log("ray.origin");
                 Debug.Log(ray.origin);
                 Vector3 direction = Vector3.ProjectOnPlane(ray.origin, Vector3.forward);
-                shape.transform.position = Vector3.SmoothDamp(shape.transform.position, direction, ref velocity, moveSmoothTime/5);
+                collider.transform.position = Vector3.SmoothDamp(collider.transform.position, direction, ref velocity, moveSmoothTime/5);
                 yield return null;
             }
+            
+            DropShape(collider);
         }
 
+        private void DropShape(Collider2D collider) // check if dropped over Slot
+        {
+            List<Collider2D> overlappingColliders = new List<Collider2D>();
+            if(collider.OverlapCollider(new ContactFilter2D().NoFilter(), overlappingColliders) > 0) // there is an overlapping collider
+            {
+                foreach(var otherCollider in overlappingColliders)
+                {
+                    if(otherCollider.gameObject.GetComponent<ShapeSlot>() != null) // is a ShapeSlot!
+                    {
+                        SelectSlot(otherCollider.gameObject.GetComponent<ShapeSlot>());
+                    }
+                }
+            }
+        }
 
         public void SelectShape(Shape shape)
         {
