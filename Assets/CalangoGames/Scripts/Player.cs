@@ -81,7 +81,10 @@ namespace CalangoGames
                 {
                     var shape = hit2D.collider.gameObject.GetComponent<Shape>();
                     SelectShape(shape);
-                    StartCoroutine(DragUpdate(hit2D.collider));
+                    if(shape.IsSelected)
+                    {
+                        StartCoroutine(DragUpdate(hit2D.collider));
+                    }
                 }
                 if(hit2D.collider.gameObject.GetComponent<ShapeSlot>() != null) // is a ShapeSlot!
                 {
@@ -92,7 +95,6 @@ namespace CalangoGames
 
         private IEnumerator DragUpdate(Collider2D collider)
         {
-            Debug.Log("Start Dragging");
             Vector3 velocity = Vector3.zero;
             Ray ray = new Ray();
             
@@ -105,8 +107,6 @@ namespace CalangoGames
                 else{
                     ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
                 }
-                Debug.Log("ray.origin");
-                Debug.Log(ray.origin);
                 Vector3 direction = Vector3.ProjectOnPlane(ray.origin, Vector3.forward);
                 collider.transform.position = Vector3.SmoothDamp(collider.transform.position, direction, ref velocity, moveSmoothTime/5);
                 yield return null;
