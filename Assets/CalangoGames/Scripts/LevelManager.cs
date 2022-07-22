@@ -1,21 +1,77 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace CalangoGames
 {
+    [System.Serializable]
+    public class Level
+    {
+        public string name;
+        private bool isLoaded = false;
+
+        public bool IsLoaded { get => isLoaded; set => isLoaded = value; }
+    }
+
     public class LevelManager : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        [SerializeField] private List<Level> levels;
+        [SerializeField] private Animator transitionAnimator;
+        [SerializeField] private float transitionTime = 1f;
+
+        private bool isLoading = false;
+        private int currentLevelIndex = 0;
+        private bool isEnd = false;
+
+        public bool IsEnd { get => isEnd; }
+
+        private void Start()
         {
-        
+            StartCoroutine(LoadLevel(levels[0]));
         }
 
-        // Update is called once per frame
-        void Update()
+        IEnumerator LoadLevel(Level level)
         {
-        
+            // start transition
+            isLoading = true;
+            transitionAnimator.SetBool("isLoading", isLoading);
+            yield return new WaitForSeconds(transitionTime);
+            if (!level.IsLoaded)
+            {
+                SceneManager.LoadScene(level.name, LoadSceneMode.Additive);
+                level.IsLoaded = true;
+            }
+
+            isLoading = false;
+            transitionAnimator.SetBool("isLoading", isLoading);
+        }
+
+        private void UnLoadLevel(Level level)
+        {
+            if (level.IsLoaded)
+            {
+                SceneManager.UnloadSceneAsync(level.name);
+                level.IsLoaded = false;
+            }
+        }
+
+        public void LoadNextLevel()
+        {
+            var currentLevel = levels[currentLevelIndex];
+            currentLevelIndex++;
+            if (currentLevelIndex >= levels.Count)
+            {
+                isEnd = true;
+                return;
+            }
+            var nextLevel = levels[currentLevelIndex];
+
+            UnLoadLevel(currentLevel);
+
+            StartCoroutine(LoadLevel(nextLevel));
+
         }
     }
 }
