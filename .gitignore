@@ -73,6 +73,8 @@ crashlytics-build.properties
 # Legends of Learning data
 
 /[Aa]ssets/Plugins/
+/[Aa]ssets/CalangoGames/Scripts/LolAPI.meta
+/[Aa]ssets/CalangoGames/Scripts/LolAPI/*
 /[Aa]ssets/LegendsOfLearning-Example/
 /[Aa]ssets/WebGLLoLDemo/
 /[Aa]ssets/WebGLTemplates/
