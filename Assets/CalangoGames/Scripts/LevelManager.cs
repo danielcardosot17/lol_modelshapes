@@ -10,6 +10,7 @@ namespace CalangoGames
     public class Level
     {
         public string name;
+        public string shapeText;
         private bool isLoaded = false;
 
         public bool IsLoaded { get => isLoaded; set => isLoaded = value; }
