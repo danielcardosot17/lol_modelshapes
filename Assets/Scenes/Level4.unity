@@ -798,7 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 1
+  shapeType: 7
 --- !u!70 &305053542
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 1
+  shapeType: 7
 --- !u!70 &428526387
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3773,7 +3773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 1
+  shapeType: 7
 --- !u!70 &1204090367
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4000,7 +4000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 1
+  shapeType: 7
 --- !u!70 &1266918632
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4114,7 +4114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 1
+  shapeType: 7
 --- !u!70 &1358359184
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5534,7 +5534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 1
+  shapeType: 7
 --- !u!70 &2084170681
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
