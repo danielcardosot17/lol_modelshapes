@@ -11,6 +11,8 @@ namespace CalangoGames
     {
         public string name;
         public string shapeText;
+        public Vector2 finalCameraPosition;
+        public float finalCameraSize;
         private bool isLoaded = false;
 
         public bool IsLoaded { get => isLoaded; set => isLoaded = value; }
