@@ -1,0 +1,16 @@
+{
+    "name": "Editor",
+    "rootNamespace": "CalangoGames",
+    "references": [
+        "GUID:214c3c9f39cfa644ab38a58306234ffe"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

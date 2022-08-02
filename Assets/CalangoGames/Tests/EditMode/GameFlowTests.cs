@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.TestTools;
 
 namespace CalangoGames.Tests
@@ -9,15 +10,22 @@ namespace CalangoGames.Tests
     public class GameFlowTests
     {
         LevelManager levelManager;
+        Level level;
         Shape shape;
         Shape otherShape;
         ShapeSlot shapeSlot;
         ShapeSlot otherShapeSlot;
+        GameEventSO occupyEvent;
         
         [SetUp]
         public void BeforeEveryTest()
         {
+            occupyEvent = ScriptableObject.CreateInstance<GameEventSO>();
+            level = new Level();
             var obj = new GameObject();
+            levelManager = obj.AddComponent<LevelManager>();
+            levelManager.CurrentLevel = level;
+
             obj.AddComponent<SpriteRenderer>();
             obj.AddComponent<BoxCollider2D>();
             shape = obj.AddComponent<Shape>();
@@ -40,6 +48,24 @@ namespace CalangoGames.Tests
             obj4.AddComponent<BoxCollider2D>();
             otherShapeSlot = obj4.AddComponent<ShapeSlot>();
             otherShapeSlot.ShapeType = ShapeType.Stick0;
+
+            levelManager.ShapesInScene = new List<Shape>();
+            levelManager.ShapesInScene.Add(shape);
+            levelManager.ShapesInScene.Add(otherShape);
+            levelManager.NumberOfShapes += 2;
+
+            levelManager.SlotsInScene = new List<ShapeSlot>();
+            levelManager.SlotsInScene.Add(shapeSlot);
+            levelManager.SlotsInScene.Add(otherShapeSlot);
+            levelManager.NumberOfSlots += 2;
+
+            levelManager.occupyEvent = occupyEvent;
+            shapeSlot.OccupyEvent = occupyEvent;
+            otherShapeSlot.OccupyEvent = occupyEvent;
+            var eventListener = obj.AddComponent<GameEventListener>();
+            eventListener.Response = new UnityEvent();
+            eventListener.Response.AddListener(levelManager.UpdateOccupiedSlots);
+            occupyEvent.RegisterListener(eventListener);
         }
 
         [TearDown]

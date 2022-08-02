@@ -286,6 +286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118032ac20002de4b963397328177a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffcts: []
+  musics: []
 --- !u!4 &81404665
 Transform:
   m_ObjectHideFlags: 0
@@ -1505,7 +1507,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 9c5fe94f01a517f4395461724f365c71, type: 3}
   m_Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
   m_FlipX: 0
@@ -2447,6 +2449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1938216703}
   - component: {fileID: 1938216702}
+  - component: {fileID: 1938216704}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -2469,38 +2472,39 @@ MonoBehaviour:
   levels:
   - name: Level1
     shapeText: Triangle
-    finalCameraPosition: 0
+    finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
   - name: Level2
     shapeText: Square
-    finalCameraPosition: 0
+    finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
   - name: Level3
     shapeText: Rectangle
-    finalCameraPosition: 0
+    finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
   - name: Level4
     shapeText: House
-    finalCameraPosition: 0
+    finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
   - name: Level5
     shapeText: Car
-    finalCameraPosition: 0
+    finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
   - name: Level6
     shapeText: Boat
-    finalCameraPosition: 0
+    finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
   - name: Level7
     shapeText: Windmill
-    finalCameraPosition: 0
+    finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
   - name: Level8
     shapeText: Star
-    finalCameraPosition: 0
+    finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
   transitionAnimator: {fileID: 1861730167}
   transitionTime: 1
+  occupyEvent: {fileID: 11400000, guid: a823e0b1f3ba6244bb2e2d3a17784774, type: 2}
 --- !u!4 &1938216703
 Transform:
   m_ObjectHideFlags: 0
@@ -2515,6 +2519,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1938216704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938216701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389c081bff4c43f47b7f9f39c87b9dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a823e0b1f3ba6244bb2e2d3a17784774, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1938216702}
+        m_TargetAssemblyTypeName: CalangoGames.LevelManager, Scripts
+        m_MethodName: UpdateOccupiedSlots
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2072178372
 GameObject:
   m_ObjectHideFlags: 0

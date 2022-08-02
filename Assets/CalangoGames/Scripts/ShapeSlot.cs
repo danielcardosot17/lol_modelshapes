@@ -15,9 +15,14 @@ namespace CalangoGames
 
         public ShapeType ShapeType { get => shapeType; set => shapeType = value; }
 
+        private GameEventSO occupyEvent;
+        public GameEventSO OccupyEvent { get => occupyEvent; set => occupyEvent = value; }
+
+
         public void Occupy()
         {
             isOccupied = true;
+            occupyEvent.Raise();
         }
     }
 }
