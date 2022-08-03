@@ -17,6 +17,7 @@ namespace CalangoGames
         public float finalCameraSize;
         private bool isLoaded = false;
         public bool IsLoaded { get => isLoaded; set => isLoaded = value; }
+
         private bool isFinished = false;
         public bool IsFinished { get => isFinished; set => isFinished = value; }
     }
@@ -26,6 +27,7 @@ namespace CalangoGames
         [SerializeField] private List<Level> levels;
         [SerializeField] private Animator transitionAnimator;
         [SerializeField] private float transitionTime = 1f;
+        [SerializeField] private GameEventSO levelFinishedEvent;
         public GameEventSO occupyEvent;
 
         private bool isLoading = false;
@@ -48,21 +50,30 @@ namespace CalangoGames
         private int numberOfSlots = 0;
         private int numberOfOccupiedSlots = 0;
 
-
-        private void Start()
-        {
-            StartCoroutine(LoadLevel(levels[0]));
+        private void Awake() {
+            currentLevel = levels[0];
         }
 
-        IEnumerator LoadLevel(Level level)
+        public IEnumerator LoadLevel(Level level)
         {
             // start transition
             isLoading = true;
             transitionAnimator.SetBool("isLoading", isLoading);
             yield return new WaitForSeconds(transitionTime);
+
+            StartCoroutine(WaitForLevelToBeLoaded(level));
+        }
+
+        private IEnumerator WaitForLevelToBeLoaded(Level level)
+        {
             if (!level.IsLoaded)
             {
-                SceneManager.LoadScene(level.name, LoadSceneMode.Additive);
+                var asyncLoad = SceneManager.LoadSceneAsync(level.name, LoadSceneMode.Additive);
+                while(!asyncLoad.isDone)
+                {
+                    Debug.Log("Loading level");
+                    yield return null;
+                }
                 level.IsLoaded = true;
             }
 
@@ -75,7 +86,9 @@ namespace CalangoGames
 
         private void SetSlotsOccupyEvent()
         {
-            foreach(var slot in slotsInScene)
+            Debug.Log("slotsInScene.Count");
+            Debug.Log(slotsInScene.Count);
+            foreach (var slot in slotsInScene)
             {
                 slot.OccupyEvent = occupyEvent;
             }
@@ -117,13 +130,14 @@ namespace CalangoGames
 
         public void LoadNextLevel()
         {
-            var currentLevel = levels[currentLevelIndex];
-            currentLevelIndex++;
-            if (currentLevelIndex >= levels.Count)
+            var nextIndex = currentLevelIndex + 1;
+            if (nextIndex >= levels.Count)
             {
                 isEnd = true;
                 return;
             }
+            var currentLevel = levels[currentLevelIndex];
+            currentLevelIndex++;
             var nextLevel = levels[currentLevelIndex];
 
             UnLoadLevel(currentLevel);
@@ -132,12 +146,22 @@ namespace CalangoGames
 
         }
 
+        public bool IsLastLevel()
+        {
+            if(currentLevelIndex == (levels.Count - 1))
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void UpdateOccupiedSlots()
         {
             numberOfOccupiedSlots++;
             if(numberOfOccupiedSlots == numberOfShapes)
             {
                 currentLevel.IsFinished = true;
+                levelFinishedEvent.Raise();
             }
         }
     }

@@ -174,5 +174,14 @@ namespace CalangoGames
             selectedShape.Deselect();
             selectedShape = null;
         }
+
+        public void DisablePlayerInput()
+        {
+            inputActions.Player.Disable();
+        }
+        public void EnablePlayerInput()
+        {
+            inputActions.Player.Enable();
+        }
     }
 }
