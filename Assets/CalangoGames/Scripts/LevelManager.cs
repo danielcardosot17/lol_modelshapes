@@ -38,6 +38,12 @@ namespace CalangoGames
         private bool isEnd = false;
         public bool IsEnd { get => isEnd; }
         public List<Shape> ShapesInScene { get => shapesInScene; set => shapesInScene = value; }
+
+        public void StartLevelAnimation()
+        {
+
+        }
+
         public List<ShapeSlot> SlotsInScene { get => slotsInScene; set => slotsInScene = value; }
         public int NumberOfShapes { get => numberOfShapes; set => numberOfShapes = value; }
         public int NumberOfSlots { get => numberOfSlots; set => numberOfSlots = value; }

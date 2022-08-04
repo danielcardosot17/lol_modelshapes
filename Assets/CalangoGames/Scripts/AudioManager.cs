@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,6 +52,16 @@ namespace CalangoGames
             {
                 Destroy(source.gameObject, source.clip.length/source.pitch);
             }
+        }
+
+        public void PauseMusic()
+        {
+            audioSource.Pause();
+        }
+
+        public void ResumeMusic()
+        {
+            audioSource.Play();
         }
     }
 }

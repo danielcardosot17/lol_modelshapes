@@ -10,10 +10,12 @@ namespace CalangoGames
         [SerializeField] private GameObject congratulationsCanvas;
         [SerializeField] private GameObject endgameCanvas;
         [SerializeField] private GameObject pauseCanvas;
+        [SerializeField] private GameObject tutorialCanvas;
 
         private LevelManager levelManager;
         private LOLAdapter lolAdapter;
         private Player player;
+        private AudioManager audioManager;
 
         private void Awake()
         {
@@ -48,9 +50,10 @@ namespace CalangoGames
 
         private IEnumerator LevelFinishedAnimation()
         {
-            StartLevelAnimation();
+            levelManager.StartLevelAnimation();
             yield return new WaitForSeconds(1);
-            SavePlayerProgress();
+            lolAdapter.IncreaseProgress();
+            lolAdapter.SavePlayerProgress();
             if(levelManager.IsLastLevel())
             {
                 ShowEndGameCanvas();
@@ -64,22 +67,42 @@ namespace CalangoGames
 
         private void ShowCongratulationCanvas()
         {
-
+            congratulationsCanvas.SetActive(true);
+        }
+        private void HideCongratulationCanvas()
+        {
+            congratulationsCanvas.SetActive(false);
         }
 
         private void ShowEndGameCanvas()
         {
-
+            endgameCanvas.SetActive(true);
+        }
+        private void HideEndGameCanvas()
+        {
+            endgameCanvas.SetActive(false);
         }
 
-        private void StartLevelAnimation()
+        public void PauseGame()
         {
-
+            player.DisablePlayerInput();
+            audioManager.PauseMusic();
         }
 
-        private void SavePlayerProgress()
+        public void ResumeGame()
         {
+            player.EnablePlayerInput();
+            audioManager.ResumeMusic();
+        }
 
+        public void ShowTutorial()
+        {
+            ShowTutorialCanvas();
+        }
+
+        private void ShowTutorialCanvas()
+        {
+            tutorialCanvas.SetActive(true);
         }
     }
 }
