@@ -11,6 +11,7 @@ namespace CalangoGames
         [SerializeField] private GameObject endgameCanvas;
         [SerializeField] private GameObject pauseCanvas;
         [SerializeField] private GameObject tutorialCanvas;
+        [SerializeField] private GameObject optionsMenuCanvas;
 
         private LevelManager levelManager;
         private LOLAdapter lolAdapter;
@@ -20,12 +21,19 @@ namespace CalangoGames
         private void Awake()
         {
             levelManager = FindObjectOfType<LevelManager>();
+            audioManager = FindObjectOfType<AudioManager>();
             lolAdapter = new LOLAdapter();
             player = FindObjectOfType<Player>();
         }
         // Start is called before the first frame update
         void Start()
         {
+            HideOptionsMenuCanvas();
+            HidePauseGameCanvas();
+            HideTutorialCanvas();
+            HideEndGameCanvas();
+            HideCongratulationCanvas();
+
             lolAdapter.Initialize();
             lolAdapter.SetGameReady();
             StartCoroutine(lolAdapter.WaitForApproval());
@@ -35,7 +43,39 @@ namespace CalangoGames
 
         private void StartGame()
         {
+            lolAdapter.LoadGame<SaveData>(OnLoad);
             StartCoroutine(levelManager.LoadLevel(levelManager.CurrentLevel));
+        }
+
+        public void RestartLevel()
+        {
+            StartCoroutine(levelManager.UnLoadLevel(levelManager.CurrentLevel));
+            StartGame();
+        }
+
+        public void NewGame()
+        {
+            var levelIndex = levelManager.CurrentLevelIndex;
+            StartCoroutine(levelManager.UnLoadLevel(levelManager.Levels[levelIndex]));
+            levelManager.CurrentLevelIndex = 0;
+            levelManager.CurrentLevel = levelManager.Levels[0];
+            StartCoroutine(levelManager.LoadLevel(levelManager.CurrentLevel));
+            ResumeGame();
+        }
+
+        private void OnLoad(SaveData saveData)
+        {
+            if (saveData != null)
+            {
+                lolAdapter.SaveData = saveData;
+            }
+            else
+            {
+                lolAdapter.SaveData = new SaveData();
+            }
+            levelManager.CurrentLevelIndex = lolAdapter.SaveData.currentLevel;
+            lolAdapter.SetSaveData(levelManager.CurrentLevelIndex);
+            lolAdapter.SavePlayerProgress();
         }
 
         private void EndGame()
@@ -65,20 +105,28 @@ namespace CalangoGames
             }
         }
 
-        private void ShowCongratulationCanvas()
+        public void GoNextLevel()
+        {
+            levelManager.LoadNextLevel();
+            lolAdapter.SetSaveData(levelManager.CurrentLevelIndex);
+            lolAdapter.SavePlayerProgress();
+            lolAdapter.SaveGame();
+        }
+
+        public void ShowCongratulationCanvas()
         {
             congratulationsCanvas.SetActive(true);
         }
-        private void HideCongratulationCanvas()
+        public void HideCongratulationCanvas()
         {
             congratulationsCanvas.SetActive(false);
         }
 
-        private void ShowEndGameCanvas()
+        public void ShowEndGameCanvas()
         {
             endgameCanvas.SetActive(true);
         }
-        private void HideEndGameCanvas()
+        public void HideEndGameCanvas()
         {
             endgameCanvas.SetActive(false);
         }
@@ -87,22 +135,41 @@ namespace CalangoGames
         {
             player.DisablePlayerInput();
             audioManager.PauseMusic();
+            ShowPauseGameCanvas();
+        }
+
+        public void ShowPauseGameCanvas()
+        {
+            pauseCanvas.SetActive(true);
+        }
+        public void HidePauseGameCanvas()
+        {
+            pauseCanvas.SetActive(false);
         }
 
         public void ResumeGame()
         {
             player.EnablePlayerInput();
             audioManager.ResumeMusic();
+            HidePauseGameCanvas();
         }
 
-        public void ShowTutorial()
-        {
-            ShowTutorialCanvas();
-        }
-
-        private void ShowTutorialCanvas()
+        public void ShowTutorialCanvas()
         {
             tutorialCanvas.SetActive(true);
+        }
+        public void HideTutorialCanvas()
+        {
+            tutorialCanvas.SetActive(false);
+        }
+
+        public void ShowOptionsMenuCanvas()
+        {
+            optionsMenuCanvas.SetActive(true);
+        }
+        public void HideOptionsMenuCanvas()
+        {
+            optionsMenuCanvas.SetActive(false);
         }
     }
 }

@@ -31,7 +31,9 @@ namespace CalangoGames
         public GameEventSO occupyEvent;
 
         private bool isLoading = false;
+
         private int currentLevelIndex = 0;
+
         private Level currentLevel;
         public Level CurrentLevel { get => currentLevel; set => currentLevel = value; }
 
@@ -48,6 +50,8 @@ namespace CalangoGames
         public int NumberOfShapes { get => numberOfShapes; set => numberOfShapes = value; }
         public int NumberOfSlots { get => numberOfSlots; set => numberOfSlots = value; }
         public int NumberOfOccupiedSlots { get => numberOfOccupiedSlots; set => numberOfOccupiedSlots = value; }
+        public int CurrentLevelIndex { get => currentLevelIndex; set => currentLevelIndex = value; }
+        public List<Level> Levels { get => levels; set => levels = value; }
 
         private List<Shape> shapesInScene;
         private List<ShapeSlot> slotsInScene;
@@ -77,7 +81,6 @@ namespace CalangoGames
                 var asyncLoad = SceneManager.LoadSceneAsync(level.name, LoadSceneMode.Additive);
                 while(!asyncLoad.isDone)
                 {
-                    Debug.Log("Loading level");
                     yield return null;
                 }
                 level.IsLoaded = true;
@@ -92,8 +95,6 @@ namespace CalangoGames
 
         private void SetSlotsOccupyEvent()
         {
-            Debug.Log("slotsInScene.Count");
-            Debug.Log(slotsInScene.Count);
             foreach (var slot in slotsInScene)
             {
                 slot.OccupyEvent = occupyEvent;
@@ -125,11 +126,12 @@ namespace CalangoGames
             numberOfShapes = shapesInScene.Count;
         }
 
-        private void UnLoadLevel(Level level)
+        public IEnumerator UnLoadLevel(Level level)
         {
             if (level.IsLoaded)
             {
-                SceneManager.UnloadSceneAsync(level.name);
+                AsyncOperation ao = SceneManager.UnloadSceneAsync(level.name);
+                yield return ao;
                 level.IsLoaded = false;
             }
         }
@@ -146,7 +148,7 @@ namespace CalangoGames
             currentLevelIndex++;
             var nextLevel = levels[currentLevelIndex];
 
-            UnLoadLevel(currentLevel);
+            StartCoroutine(UnLoadLevel(currentLevel));
 
             StartCoroutine(LoadLevel(nextLevel));
 
