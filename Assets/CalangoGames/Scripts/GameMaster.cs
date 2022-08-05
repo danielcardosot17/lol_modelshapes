@@ -12,6 +12,8 @@ namespace CalangoGames
         [SerializeField] private GameObject pauseCanvas;
         [SerializeField] private GameObject tutorialCanvas;
         [SerializeField] private GameObject optionsMenuCanvas;
+        [SerializeField] private GameObject restartGameConfirmationCanvas;
+        [SerializeField] private GameEventSO updateTextEvent;
 
         private LevelManager levelManager;
         private LOLAdapter lolAdapter;
@@ -23,6 +25,7 @@ namespace CalangoGames
             levelManager = FindObjectOfType<LevelManager>();
             audioManager = FindObjectOfType<AudioManager>();
             lolAdapter = new LOLAdapter();
+            lolAdapter.UpdateTextEvent = updateTextEvent;
             player = FindObjectOfType<Player>();
         }
         // Start is called before the first frame update
@@ -33,6 +36,7 @@ namespace CalangoGames
             HideTutorialCanvas();
             HideEndGameCanvas();
             HideCongratulationCanvas();
+            HideRestartGameConfirmationCanvas();
 
             lolAdapter.Initialize();
             lolAdapter.SetGameReady();
@@ -51,6 +55,15 @@ namespace CalangoGames
         {
             StartCoroutine(levelManager.UnLoadLevel(levelManager.CurrentLevel));
             StartGame();
+        }
+
+        public void ShowRestartGameConfirmationCanvas()
+        {
+            restartGameConfirmationCanvas.SetActive(true);
+        }
+        public void HideRestartGameConfirmationCanvas()
+        {
+            restartGameConfirmationCanvas.SetActive(false);
         }
 
         public void NewGame()
@@ -113,6 +126,19 @@ namespace CalangoGames
             lolAdapter.SaveGame();
         }
 
+        public void PauseGame()
+        {
+            player.DisablePlayerInput();
+            audioManager.PauseMusic();
+            ShowPauseGameCanvas();
+        }
+        public void ResumeGame()
+        {
+            player.EnablePlayerInput();
+            audioManager.ResumeMusic();
+            HidePauseGameCanvas();
+        }
+
         public void ShowCongratulationCanvas()
         {
             congratulationsCanvas.SetActive(true);
@@ -121,7 +147,6 @@ namespace CalangoGames
         {
             congratulationsCanvas.SetActive(false);
         }
-
         public void ShowEndGameCanvas()
         {
             endgameCanvas.SetActive(true);
@@ -130,14 +155,6 @@ namespace CalangoGames
         {
             endgameCanvas.SetActive(false);
         }
-
-        public void PauseGame()
-        {
-            player.DisablePlayerInput();
-            audioManager.PauseMusic();
-            ShowPauseGameCanvas();
-        }
-
         public void ShowPauseGameCanvas()
         {
             pauseCanvas.SetActive(true);
@@ -146,14 +163,6 @@ namespace CalangoGames
         {
             pauseCanvas.SetActive(false);
         }
-
-        public void ResumeGame()
-        {
-            player.EnablePlayerInput();
-            audioManager.ResumeMusic();
-            HidePauseGameCanvas();
-        }
-
         public void ShowTutorialCanvas()
         {
             tutorialCanvas.SetActive(true);
@@ -162,7 +171,6 @@ namespace CalangoGames
         {
             tutorialCanvas.SetActive(false);
         }
-
         public void ShowOptionsMenuCanvas()
         {
             optionsMenuCanvas.SetActive(true);
@@ -171,5 +179,6 @@ namespace CalangoGames
         {
             optionsMenuCanvas.SetActive(false);
         }
+
     }
 }

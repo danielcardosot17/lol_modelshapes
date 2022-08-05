@@ -28,6 +28,9 @@ namespace CalangoGames
         [SerializeField] private Animator transitionAnimator;
         [SerializeField] private float transitionTime = 1f;
         [SerializeField] private GameEventSO levelFinishedEvent;
+
+        private TextManager textManager;
+
         public GameEventSO occupyEvent;
 
         private bool isLoading = false;
@@ -40,11 +43,6 @@ namespace CalangoGames
         private bool isEnd = false;
         public bool IsEnd { get => isEnd; }
         public List<Shape> ShapesInScene { get => shapesInScene; set => shapesInScene = value; }
-
-        public void StartLevelAnimation()
-        {
-
-        }
 
         public List<ShapeSlot> SlotsInScene { get => slotsInScene; set => slotsInScene = value; }
         public int NumberOfShapes { get => numberOfShapes; set => numberOfShapes = value; }
@@ -62,8 +60,13 @@ namespace CalangoGames
 
         private void Awake() {
             currentLevel = levels[0];
+            textManager = FindObjectOfType<TextManager>();
         }
 
+        public void StartLevelAnimation()
+        {
+
+        }
         public IEnumerator LoadLevel(Level level)
         {
             // start transition
@@ -91,6 +94,7 @@ namespace CalangoGames
             FindShapesInScene();
             FindSlotsInScene();
             SetSlotsOccupyEvent();
+            textManager.UpdateLevelNameText(level.name);
         }
 
         private void SetSlotsOccupyEvent()
