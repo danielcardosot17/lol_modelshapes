@@ -51,6 +51,7 @@ namespace CalangoGames
         public int CurrentLevelIndex { get => currentLevelIndex; set => currentLevelIndex = value; }
         public List<Level> Levels { get => levels; set => levels = value; }
 
+
         private List<Shape> shapesInScene;
         private List<ShapeSlot> slotsInScene;
 
@@ -95,8 +96,9 @@ namespace CalangoGames
             FindSlotsInScene();
             SetSlotsOccupyEvent();
             textManager.UpdateLevelNameText(level.shapeText);
+            //textManager.CancelText();
+            textManager.SpeakText(level.shapeText.ToLower());
         }
-
         private void SetSlotsOccupyEvent()
         {
             foreach (var slot in slotsInScene)
@@ -115,6 +117,10 @@ namespace CalangoGames
             //        slotsInScene.Add(shapeSlot);
             //}
             //numberOfSlots = slotsInScene.Count;
+            foreach(ShapeSlot shapeSlot in slotArray)
+            {
+                slotsInScene.Add(shapeSlot);
+            }
             numberOfSlots = slotArray.Length;
             numberOfOccupiedSlots = 0;
         }
@@ -129,6 +135,10 @@ namespace CalangoGames
             //        shapesInScene.Add(shape);
             //}
             //numberOfShapes = shapesInScene.Count;
+            foreach (Shape shape in shapeArray)
+            {
+                shapesInScene.Add(shape);
+            }
             numberOfShapes = shapeArray.Length;
         }
 
@@ -150,14 +160,19 @@ namespace CalangoGames
                 isEnd = true;
                 return;
             }
-            var currentLevel = levels[currentLevelIndex];
+            var levelToUnload = currentLevel;
+            StartCoroutine(UnLoadLevel(levelToUnload));
             currentLevelIndex++;
+            currentLevel = levels[currentLevelIndex];
             var nextLevel = levels[currentLevelIndex];
-
-            StartCoroutine(UnLoadLevel(currentLevel));
-
             StartCoroutine(LoadLevel(nextLevel));
 
+        }
+
+        public void RestartLevel()
+        {
+            StartCoroutine(UnLoadLevel(currentLevel));
+            StartCoroutine(LoadLevel(currentLevel));
         }
 
         public bool IsLastLevel()

@@ -19,11 +19,13 @@ namespace CalangoGames
         private LOLAdapter lolAdapter;
         private Player player;
         private AudioManager audioManager;
+        private TextManager textManager;
 
         private void Awake()
         {
             levelManager = FindObjectOfType<LevelManager>();
             audioManager = FindObjectOfType<AudioManager>();
+            textManager = FindObjectOfType<TextManager>();
             lolAdapter = new LOLAdapter();
             lolAdapter.UpdateTextEvent = updateTextEvent;
             player = FindObjectOfType<Player>();
@@ -53,18 +55,11 @@ namespace CalangoGames
 
         public void RestartLevel()
         {
-            StartCoroutine(levelManager.UnLoadLevel(levelManager.CurrentLevel));
-            StartGame();
+            levelManager.RestartLevel();
+            //StartCoroutine(levelManager.UnLoadLevel(levelManager.CurrentLevel));
+            //StartGame();
         }
 
-        public void ShowRestartGameConfirmationCanvas()
-        {
-            restartGameConfirmationCanvas.SetActive(true);
-        }
-        public void HideRestartGameConfirmationCanvas()
-        {
-            restartGameConfirmationCanvas.SetActive(false);
-        }
 
         public void NewGame()
         {
@@ -73,6 +68,7 @@ namespace CalangoGames
             levelManager.CurrentLevelIndex = 0;
             levelManager.CurrentLevel = levelManager.Levels[0];
             StartCoroutine(levelManager.LoadLevel(levelManager.CurrentLevel));
+            HideRestartGameConfirmationCanvas();
             ResumeGame();
         }
 
@@ -124,6 +120,7 @@ namespace CalangoGames
             lolAdapter.SetSaveData(levelManager.CurrentLevelIndex);
             lolAdapter.SavePlayerProgress();
             lolAdapter.SaveGame();
+            HideCongratulationCanvas();
         }
 
         public void PauseGame()
@@ -142,6 +139,8 @@ namespace CalangoGames
         public void ShowCongratulationCanvas()
         {
             congratulationsCanvas.SetActive(true);
+            //textManager.CancelText();
+            textManager.SpeakText("congrats");
         }
         public void HideCongratulationCanvas()
         {
@@ -158,6 +157,8 @@ namespace CalangoGames
         public void ShowPauseGameCanvas()
         {
             pauseCanvas.SetActive(true);
+            //textManager.CancelText();
+            textManager.SpeakText("paused");
         }
         public void HidePauseGameCanvas()
         {
@@ -180,5 +181,15 @@ namespace CalangoGames
             optionsMenuCanvas.SetActive(false);
         }
 
+        public void ShowRestartGameConfirmationCanvas()
+        {
+            restartGameConfirmationCanvas.SetActive(true);
+            //textManager.CancelText();
+            textManager.SpeakText("restartgame");
+        }
+        public void HideRestartGameConfirmationCanvas()
+        {
+            restartGameConfirmationCanvas.SetActive(false);
+        }
     }
 }
