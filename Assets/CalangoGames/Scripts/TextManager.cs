@@ -8,7 +8,7 @@ namespace CalangoGames
 {
     public class TextManager : MonoBehaviour
     {
-        [SerializeField] private TMP_Text pauseText;
+        [SerializeField] private TMP_Text pausedText;
         [SerializeField] private TMP_Text restartGameText;
         //[SerializeField] private TMP_Text musicText;
         //[SerializeField] private TMP_Text sfxText;
@@ -21,7 +21,7 @@ namespace CalangoGames
 
         public void UpdateGameText()
         {
-            pauseText.text = GetText("pause", "Paused");
+            pausedText.text = GetText("paused", "Paused");
             restartGameText.text = GetText("restartgame", "Restart Game?");
             //musicText.text = GetText("music", "Music");
             //sfxText.text = GetText("sfx", "SFX");
@@ -33,7 +33,7 @@ namespace CalangoGames
         }
         public void UpdateLevelNameText(string name)
         {
-            levelNameText.text = SharedState.LanguageDefs[name] ?? name;
+            levelNameText.text = GetText(name.ToLower(), name);
         }
 
         string GetText(string key, string defaultValue)

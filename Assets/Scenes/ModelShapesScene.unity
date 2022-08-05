@@ -763,7 +763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4325fbf71671dc04baa19bd27e2e8633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseText: {fileID: 1399335473}
+  pausedText: {fileID: 1399335473}
   restartGameText: {fileID: 1707932280}
   congratsText: {fileID: 1084054959}
   letsBuildText: {fileID: 1614900665}

@@ -94,7 +94,7 @@ namespace CalangoGames
             FindShapesInScene();
             FindSlotsInScene();
             SetSlotsOccupyEvent();
-            textManager.UpdateLevelNameText(level.name);
+            textManager.UpdateLevelNameText(level.shapeText);
         }
 
         private void SetSlotsOccupyEvent()
@@ -108,26 +108,28 @@ namespace CalangoGames
         public void FindSlotsInScene()
         {
             slotsInScene = new List<ShapeSlot>();
-
-            foreach (ShapeSlot shapeSlot in Resources.FindObjectsOfTypeAll(typeof(ShapeSlot)) as ShapeSlot[])
-            {
-                if (!EditorUtility.IsPersistent(shapeSlot.transform.root.gameObject) && !(shapeSlot.hideFlags == HideFlags.NotEditable || shapeSlot.hideFlags == HideFlags.HideAndDontSave))
-                    slotsInScene.Add(shapeSlot);
-            }
-            numberOfSlots = slotsInScene.Count;
+            var slotArray = Resources.FindObjectsOfTypeAll(typeof(ShapeSlot)) as ShapeSlot[];
+            //foreach (ShapeSlot shapeSlot in slotArray)
+            //{
+            //    if (!EditorUtility.IsPersistent(shapeSlot.transform.root.gameObject) && !(shapeSlot.hideFlags == HideFlags.NotEditable || shapeSlot.hideFlags == HideFlags.HideAndDontSave))
+            //        slotsInScene.Add(shapeSlot);
+            //}
+            //numberOfSlots = slotsInScene.Count;
+            numberOfSlots = slotArray.Length;
             numberOfOccupiedSlots = 0;
         }
 
         public void FindShapesInScene()
         {
             shapesInScene = new List<Shape>();
-
-            foreach (Shape shape in Resources.FindObjectsOfTypeAll(typeof(Shape)) as Shape[])
-            {
-                if (!EditorUtility.IsPersistent(shape.transform.root.gameObject) && !(shape.hideFlags == HideFlags.NotEditable || shape.hideFlags == HideFlags.HideAndDontSave))
-                    shapesInScene.Add(shape);
-            }
-            numberOfShapes = shapesInScene.Count;
+            var shapeArray = Resources.FindObjectsOfTypeAll(typeof(Shape)) as Shape[];
+            //foreach (Shape shape in shapeArray)
+            //{
+            //    if (!EditorUtility.IsPersistent(shape.transform.root.gameObject) && !(shape.hideFlags == HideFlags.NotEditable || shape.hideFlags == HideFlags.HideAndDontSave))
+            //        shapesInScene.Add(shape);
+            //}
+            //numberOfShapes = shapesInScene.Count;
+            numberOfShapes = shapeArray.Length;
         }
 
         public IEnumerator UnLoadLevel(Level level)
