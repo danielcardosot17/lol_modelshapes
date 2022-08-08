@@ -4835,35 +4835,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - name: Level1
+  - levelName: Level1
     shapeText: Triangle
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - name: Level2
+  - levelName: Level2
     shapeText: Square
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - name: Level3
+  - levelName: Level3
     shapeText: Rectangle
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - name: Level4
+  - levelName: Level4
     shapeText: House
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - name: Level5
+  - levelName: Level5
     shapeText: Car
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - name: Level6
+  - levelName: Level6
     shapeText: Boat
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - name: Level7
+  - levelName: Level7
     shapeText: Windmill
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - name: Level8
+  - levelName: Level8
     shapeText: Star
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
@@ -5129,9 +5129,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1160100495}
-        m_TargetAssemblyTypeName: CalangoGames.GameMaster, Scripts
-        m_MethodName: RestartLevel
+      - m_Target: {fileID: 1938216702}
+        m_TargetAssemblyTypeName: CalangoGames.LevelManager, Scripts
+        m_MethodName: SpeakLevelName
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -11,7 +11,7 @@ namespace CalangoGames
     [System.Serializable]
     public class Level
     {
-        public string name;
+        public string levelName;
         public string shapeText;
         public Vector2 finalCameraPosition;
         public float finalCameraSize;
@@ -82,7 +82,7 @@ namespace CalangoGames
         {
             if (!level.IsLoaded)
             {
-                var asyncLoad = SceneManager.LoadSceneAsync(level.name, LoadSceneMode.Additive);
+                var asyncLoad = SceneManager.LoadSceneAsync(level.levelName, LoadSceneMode.Additive);
                 while(!asyncLoad.isDone)
                 {
                     yield return null;
@@ -146,7 +146,7 @@ namespace CalangoGames
         {
             if (level.IsLoaded)
             {
-                AsyncOperation ao = SceneManager.UnloadSceneAsync(level.name);
+                AsyncOperation ao = SceneManager.UnloadSceneAsync(level.levelName);
                 yield return ao;
                 level.IsLoaded = false;
             }
@@ -192,6 +192,11 @@ namespace CalangoGames
                 currentLevel.IsFinished = true;
                 levelFinishedEvent.Raise();
             }
+        }
+
+        public void SpeakLevelName()
+        {
+            textManager.SpeakText(currentLevel.shapeText.ToLower());
         }
     }
 }
