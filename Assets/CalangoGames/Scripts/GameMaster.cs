@@ -23,6 +23,9 @@ namespace CalangoGames
 
         private void Awake()
         {
+#if UNITY_EDITOR
+            PlayerPrefs.DeleteAll();
+#endif
             levelManager = FindObjectOfType<LevelManager>();
             audioManager = FindObjectOfType<AudioManager>();
             textManager = FindObjectOfType<TextManager>();

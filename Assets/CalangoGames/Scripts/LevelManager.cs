@@ -36,6 +36,7 @@ namespace CalangoGames
         private bool isLoading = false;
 
         private int currentLevelIndex = 0;
+        public int CurrentLevelIndex { get => currentLevelIndex; set => currentLevelIndex = value; }
 
         private Level currentLevel;
         public Level CurrentLevel { get => currentLevel; set => currentLevel = value; }
@@ -48,7 +49,6 @@ namespace CalangoGames
         public int NumberOfShapes { get => numberOfShapes; set => numberOfShapes = value; }
         public int NumberOfSlots { get => numberOfSlots; set => numberOfSlots = value; }
         public int NumberOfOccupiedSlots { get => numberOfOccupiedSlots; set => numberOfOccupiedSlots = value; }
-        public int CurrentLevelIndex { get => currentLevelIndex; set => currentLevelIndex = value; }
         public List<Level> Levels { get => levels; set => levels = value; }
 
 
@@ -154,6 +154,8 @@ namespace CalangoGames
 
         public void LoadNextLevel()
         {
+            Debug.Log("currentLevelIndex");
+            Debug.Log(currentLevelIndex);
             var nextIndex = currentLevelIndex + 1;
             if (nextIndex >= levels.Count)
             {
