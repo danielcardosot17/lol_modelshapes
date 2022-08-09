@@ -147,7 +147,7 @@ namespace CalangoGames
             if(shapeSlot.IsOccupied) return;
             if(selectedShape == null) return;
             
-            if(selectedShape.ShapeType == shapeSlot.ShapeType)
+            if(selectedShape.ShapeType == shapeSlot.ShapeType && selectedShape.ShapeAngle == shapeSlot.ShapeAngle)
             {
                 shapeSlot.Occupy();
                 Shape shape = selectedShape;

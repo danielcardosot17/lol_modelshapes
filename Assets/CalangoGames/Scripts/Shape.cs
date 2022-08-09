@@ -10,6 +10,8 @@ namespace CalangoGames
     public class Shape : MonoBehaviour
     {
         [SerializeField] private ShapeType shapeType;
+        [SerializeField] private ShapeAngle shapeAngle;
+
         private bool isSelectable = true;
         public bool IsSelectable { get => isSelectable; }
         private bool isSelected = false;
@@ -17,6 +19,7 @@ namespace CalangoGames
         private ShapeOutline outline;
         public ShapeOutline Outline { get => outline; }
         public ShapeType ShapeType { get => shapeType; set => shapeType = value; }
+        public ShapeAngle ShapeAngle { get => shapeAngle; set => shapeAngle = value; }
 
         private void Start() {
             outline = GetComponentInChildren<ShapeOutline>();

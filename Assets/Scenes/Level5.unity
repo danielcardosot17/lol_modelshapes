@@ -150,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38896830}
   m_LocalRotation: {x: -0, y: -0, z: 0.5, w: 0.8660254}
-  m_LocalPosition: {x: -19.14, y: -0.47, z: 0}
+  m_LocalPosition: {x: 22.1, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 869898658}
@@ -169,7 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 4
+  shapeAngle: 4
 --- !u!70 &38896833
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -378,6 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &46211227
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -491,6 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &60090776
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -897,7 +900,7 @@ GameObject:
   - component: {fileID: 258315379}
   - component: {fileID: 258315378}
   m_Layer: 0
-  m_Name: Plank2_0
+  m_Name: Plank3_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -929,7 +932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 4
+  shapeAngle: 0
 --- !u!70 &258315379
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1043,6 +1047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &323117443
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1250,7 +1255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 1
+  shapeAngle: 0
 --- !u!70 &389644458
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1426,7 +1432,7 @@ GameObject:
   - component: {fileID: 409177399}
   - component: {fileID: 409177398}
   m_Layer: 0
-  m_Name: Plank_Half_90
+  m_Name: Plank4_90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1458,7 +1464,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 5
+  shapeAngle: 6
 --- !u!70 &409177399
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1668,6 +1675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &416288157
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1782,6 +1790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &428525237
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1895,6 +1904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &456273023
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2084,7 +2094,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564431559}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.07, y: -3.49, z: 0}
+  m_LocalPosition: {x: 27.8, y: -14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 874896220}
@@ -2103,7 +2113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 2
+  shapeAngle: 0
 --- !u!70 &564431562
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2259,6 +2270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &588416119
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2372,6 +2384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &660089427
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2517,7 +2530,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670534983}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.099999, y: -8.7, z: 0}
+  m_LocalPosition: {x: 26.8, y: -10.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1994100758}
@@ -2536,7 +2549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 1
+  shapeAngle: 0
 --- !u!70 &670534987
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2675,7 +2689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746759465}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.396691, y: 2.5580542, z: 0}
+  m_LocalPosition: {x: 30, y: -17.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 409721386}
@@ -2694,7 +2708,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 4
+  shapeAngle: 0
 --- !u!70 &746759468
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2891,6 +2906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &805623874
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3003,7 +3019,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 3
+  shapeAngle: 0
 --- !u!70 &809854860
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3339,7 +3356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035807153}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.1, y: -8.7, z: 0}
+  m_LocalPosition: {x: 26.8, y: -8.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1135003450}
@@ -3358,7 +3375,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 1
+  shapeAngle: 0
 --- !u!70 &1035807157
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3453,7 +3471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062433570}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 7.07, y: -6.1, z: 0}
+  m_LocalPosition: {x: 16.2, y: -6.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 332284571}
@@ -3472,7 +3490,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 5
+  shapeAngle: 6
 --- !u!70 &1062433574
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3535,6 +3554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &1108996365
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3648,6 +3668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &1112910071
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3856,6 +3877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &1198317419
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3968,7 +3990,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 1
+  shapeAngle: 0
 --- !u!70 &1207037373
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4082,6 +4105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &1286268246
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4176,7 +4200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392888695}
   m_LocalRotation: {x: -0, y: -0, z: 0.86602545, w: 0.49999994}
-  m_LocalPosition: {x: -0.1, y: -0.56, z: 0}
+  m_LocalPosition: {x: 22.3, y: -0.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400177541}
@@ -4195,7 +4219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 4
+  shapeAngle: 8
 --- !u!70 &1392888698
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4309,6 +4334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &1427910107
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4739,7 +4765,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595227585}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -31.5, y: -6.1, z: 0}
+  m_LocalPosition: {x: 15, y: -6.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2020721556}
@@ -4758,7 +4784,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 5
+  shapeAngle: 6
 --- !u!70 &1595227589
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4822,6 +4849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &1611495657
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5031,6 +5059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &1658164623
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5144,6 +5173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &1658644259
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5224,7 +5254,7 @@ GameObject:
   - component: {fileID: 1670049480}
   - component: {fileID: 1670049479}
   m_Layer: 0
-  m_Name: Plank_Half_90
+  m_Name: Plank4_90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5256,7 +5286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 5
+  shapeAngle: 6
 --- !u!70 &1670049480
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5369,7 +5400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 4
+  shapeAngle: 8
 --- !u!70 &1699901381
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5482,7 +5514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 4
+  shapeAngle: 4
 --- !u!70 &1729437985
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5597,6 +5630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &1738542497
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5804,7 +5838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 1
+  shapeAngle: 0
 --- !u!70 &1840117213
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5917,7 +5952,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 2
+  shapeAngle: 0
 --- !u!70 &1848987355
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6063,7 +6099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849044123}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.46, y: -3.56, z: 0}
+  m_LocalPosition: {x: 30.8, y: -3.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 168833268}
@@ -6082,7 +6118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 1
+  shapeType: 5
+  shapeAngle: 0
 --- !u!70 &1849044127
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6262,7 +6299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894202477}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.256691, y: 2.5480542, z: 0}
+  m_LocalPosition: {x: 19, y: -17.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 797269518}
@@ -6281,7 +6318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 3
+  shapeAngle: 0
 --- !u!70 &1894202480
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6427,7 +6465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906929406}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.77000046, y: -8.7, z: 0}
+  m_LocalPosition: {x: 26.7, y: -7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1440095824}
@@ -6446,7 +6484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 1
+  shapeAngle: 0
 --- !u!70 &1906929410
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6510,6 +6549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &1933183707
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6590,7 +6630,7 @@ GameObject:
   - component: {fileID: 1970505886}
   - component: {fileID: 1970505885}
   m_Layer: 0
-  m_Name: Plank_Half_0
+  m_Name: Plank4_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6622,7 +6662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 5
+  shapeAngle: 0
 --- !u!70 &1970505886
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6832,6 +6873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &2005049332
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7041,6 +7083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &2028556741
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7155,6 +7198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeType: 0
+  shapeAngle: 0
 --- !u!58 &2030899067
 CircleCollider2D:
   m_ObjectHideFlags: 0

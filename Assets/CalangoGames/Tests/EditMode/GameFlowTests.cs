@@ -30,24 +30,28 @@ namespace CalangoGames.Tests
             obj.AddComponent<BoxCollider2D>();
             shape = obj.AddComponent<Shape>();
             shape.ShapeType = ShapeType.Clay;
+            shape.ShapeAngle = ShapeAngle.a0;
 
             var obj2 = new GameObject();
             obj2.AddComponent<SpriteRenderer>();
             obj2.AddComponent<BoxCollider2D>();
             shapeSlot = obj2.AddComponent<ShapeSlot>();
             shapeSlot.ShapeType = ShapeType.Clay;
+            shapeSlot.ShapeAngle = ShapeAngle.a0;
 
             var obj3 = new GameObject();
             obj3.AddComponent<SpriteRenderer>();
             obj3.AddComponent<BoxCollider2D>();
             otherShape = obj3.AddComponent<Shape>();
             otherShape.ShapeType = ShapeType.Stick0;
-            
+            otherShape.ShapeAngle = ShapeAngle.a0;
+
             var obj4 = new GameObject();
             obj4.AddComponent<SpriteRenderer>();
             obj4.AddComponent<BoxCollider2D>();
             otherShapeSlot = obj4.AddComponent<ShapeSlot>();
             otherShapeSlot.ShapeType = ShapeType.Stick0;
+            otherShapeSlot.ShapeAngle = ShapeAngle.a0;
 
             levelManager.ShapesInScene = new List<Shape>();
             levelManager.ShapesInScene.Add(shape);

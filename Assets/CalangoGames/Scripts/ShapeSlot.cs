@@ -10,10 +10,12 @@ namespace CalangoGames
     public class ShapeSlot : MonoBehaviour
     {
         [SerializeField] private ShapeType shapeType;
+        [SerializeField] private ShapeAngle shapeAngle;
         private bool isOccupied = false;
         public bool IsOccupied { get => isOccupied; }
 
         public ShapeType ShapeType { get => shapeType; set => shapeType = value; }
+        public ShapeAngle ShapeAngle { get => shapeAngle; set => shapeAngle = value; }
 
         private GameEventSO occupyEvent;
         public GameEventSO OccupyEvent { get => occupyEvent; set => occupyEvent = value; }
