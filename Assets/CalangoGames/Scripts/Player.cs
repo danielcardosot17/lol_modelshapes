@@ -17,6 +17,7 @@ namespace CalangoGames
         private InputAction touchAction;
         private InputAction touchPosition;
         private InputAction mousePosition;
+        private AudioManager audioManager;
         private bool isTouching = false;
 
         private Camera mainCamera;
@@ -29,6 +30,7 @@ namespace CalangoGames
             touchAction = inputActions.Player.Touch;
             touchPosition = inputActions.Player.TouchPosition;
             mousePosition = inputActions.Player.MousePosition;
+            audioManager = FindObjectOfType<AudioManager>();
         }
 
         private void OnEnable() {
@@ -167,6 +169,14 @@ namespace CalangoGames
                 yield return null;
             }
             shape.transform.position = endPosition;
+            if (shape.ShapeType == ShapeType.Clay)
+            {
+                audioManager.PlaySFX("Clay");
+            }
+            else
+            {
+                audioManager.PlaySFX("Stick");
+            }
         }
 
         public void DeselectShape()

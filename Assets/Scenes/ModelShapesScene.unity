@@ -287,7 +287,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118032ac20002de4b963397328177a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffcts: []
+  soundEffcts:
+  - name: Clay
+    category: sfx
+    clip: {fileID: 8300000, guid: 3cda3ec17720013439cf682bd06cc97b, type: 3}
+    priority: 128
+    volume: 0.7
+    pitch: 1
+    loop: 0
+  - name: Stick
+    category: sfx
+    clip: {fileID: 8300000, guid: fe10bf6fefb928b49894217942806647, type: 3}
+    priority: 128
+    volume: 1
+    pitch: 1.5
+    loop: 0
   musics: []
 --- !u!4 &81404665
 Transform:
@@ -1388,7 +1402,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 55.8
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1412,7 +1426,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.4, y: 21.1, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
