@@ -47,6 +47,8 @@ namespace CalangoGames
             lolAdapter.SetGameReady();
             StartCoroutine(lolAdapter.WaitForApproval());
 
+            audioManager.PlayMusic("Music");
+
             StartGame();
         }
 
