@@ -4856,35 +4856,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - levelName: Level1
+  - levelName: Triangle
     shapeText: Triangle
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - levelName: Level2
+  - levelName: Square
     shapeText: Square
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - levelName: Level3
+  - levelName: Rectangle
     shapeText: Rectangle
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - levelName: Level4
+  - levelName: House
     shapeText: House
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - levelName: Level5
+  - levelName: Car
     shapeText: Car
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - levelName: Level6
+  - levelName: Boat
     shapeText: Boat
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - levelName: Level7
+  - levelName: Windmill
     shapeText: Windmill
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
-  - levelName: Level8
+  - levelName: Star
     shapeText: Star
     finalCameraPosition: {x: 0, y: 0}
     finalCameraSize: 0
