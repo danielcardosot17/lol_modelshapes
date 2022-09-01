@@ -302,6 +302,20 @@ MonoBehaviour:
     volume: 1
     pitch: 1.5
     loop: 0
+  - name: Boat_Sea
+    category: sfx
+    clip: {fileID: 8300000, guid: f2ab39293a5a6e34ea9bf6db1c2411e1, type: 3}
+    priority: 96
+    volume: 0.4
+    pitch: 1.5
+    loop: 0
+  - name: Boat_Bells
+    category: sfx
+    clip: {fileID: 8300000, guid: 2e8844989e7c6e044bf35015ca4419a2, type: 3}
+    priority: 96
+    volume: 0.5
+    pitch: 1.5
+    loop: 0
   musics:
   - name: Music
     category: music
@@ -1583,9 +1597,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1938216702}
-        m_TargetAssemblyTypeName: CalangoGames.LevelManager, Scripts
-        m_MethodName: LoadNextLevel
+      - m_Target: {fileID: 1160100495}
+        m_TargetAssemblyTypeName: CalangoGames.GameMaster, Scripts
+        m_MethodName: LevelIsFinished
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

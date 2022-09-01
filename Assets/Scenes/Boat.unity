@@ -1934,11 +1934,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27dc7876aef989945ae519135b2cdb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationDuration: 5
+  animationDuration: 10
   boat: {fileID: 574763714}
-  nearSpeed: 0.5
-  boatSpeed: 0.4
-  farSpeed: 0.3
+  nearSpeed: 0.1
+  boatSpeed: 0.08
+  farSpeed: 0.04
   nearMaterial: {fileID: 2100000, guid: 1511d6de9a81eeb44811a5cefd4a19d5, type: 2}
   boatMaterial: {fileID: 2100000, guid: 00851bf89fbde0f4fa561298e2ca338c, type: 2}
   farMaterial: {fileID: 2100000, guid: c683a43f68f2a5d43a373ffcd786cc85, type: 2}

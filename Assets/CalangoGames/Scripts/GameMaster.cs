@@ -109,7 +109,6 @@ namespace CalangoGames
             HideExampleCanvasAndShapesTable();
             levelManager.StartLevelAnimation();
             yield return new WaitForSeconds(levelManager.AnimationManager.GetAnimationDuration());
-            levelManager.ResetCameraPositionAndSize();
             lolAdapter.IncreaseProgress();
             lolAdapter.SavePlayerProgress();
             if(levelManager.IsLastLevel())
@@ -136,6 +135,7 @@ namespace CalangoGames
 
         public void GoNextLevel()
         {
+            levelManager.ResetCameraPositionAndSize();
             levelManager.LoadNextLevel();
             lolAdapter.SetSaveData(levelManager.CurrentLevelIndex);
             lolAdapter.SavePlayerProgress();
