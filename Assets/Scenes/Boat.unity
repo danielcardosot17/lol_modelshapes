@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 19316276}
   - component: {fileID: 19316275}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +154,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 279173017}
-  m_RootOrder: 10
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &19316275
 MonoBehaviour:
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 1
   shapeAngle: 0
 --- !u!70 &19316276
 CapsuleCollider2D:
@@ -247,6 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 23226642}
   - component: {fileID: 23226643}
+  - component: {fileID: 23226644}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -319,6 +320,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &23226644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23226641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &29140313
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +555,7 @@ GameObject:
   - component: {fileID: 48746169}
   - component: {fileID: 48746168}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -560,7 +573,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 279173017}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &48746168
 MonoBehaviour:
@@ -574,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 1
   shapeAngle: 0
 --- !u!70 &48746169
 CapsuleCollider2D:
@@ -656,7 +669,7 @@ GameObject:
   - component: {fileID: 63415620}
   - component: {fileID: 63415619}
   m_Layer: 0
-  m_Name: Plank2
+  m_Name: Plank2_135
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -688,8 +701,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
-  shapeAngle: 0
+  shapeType: 3
+  shapeAngle: 9
 --- !u!70 &63415620
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -767,8 +780,10 @@ GameObject:
   m_Component:
   - component: {fileID: 64481621}
   - component: {fileID: 64481620}
+  - component: {fileID: 64481623}
+  - component: {fileID: 64481622}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -838,8 +853,38 @@ Transform:
   m_Children:
   - {fileID: 1208808279}
   m_Father: {fileID: 314258419}
-  m_RootOrder: 10
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &64481622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64481619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 1
+  shapeAngle: 0
+--- !u!70 &64481623
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64481619}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 15.6, y: 2.8}
+  m_Direction: 1
 --- !u!1 &73329443
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +895,7 @@ GameObject:
   m_Component:
   - component: {fileID: 73329444}
   - component: {fileID: 73329445}
+  - component: {fileID: 73329446}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -922,6 +968,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &73329446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73329443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &88642240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,7 +1336,7 @@ GameObject:
   - component: {fileID: 106533048}
   - component: {fileID: 106533047}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1296,7 +1354,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 279173017}
-  m_RootOrder: 4
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &106533047
 MonoBehaviour:
@@ -1310,8 +1368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
-  shapeAngle: 0
+  shapeType: 1
+  shapeAngle: 6
 --- !u!70 &106533048
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1484,8 +1542,10 @@ GameObject:
   m_Component:
   - component: {fileID: 149823800}
   - component: {fileID: 149823799}
+  - component: {fileID: 149823802}
+  - component: {fileID: 149823801}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1555,8 +1615,38 @@ Transform:
   m_Children:
   - {fileID: 23226642}
   m_Father: {fileID: 314258419}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &149823801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149823798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 1
+  shapeAngle: 6
+--- !u!70 &149823802
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149823798}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 15.600004, y: 2.8000007}
+  m_Direction: 1
 --- !u!1 &171975876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,6 +1657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 171975877}
   - component: {fileID: 171975878}
+  - component: {fileID: 171975879}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -1639,6 +1730,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &171975879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171975876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &179659300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,7 +1871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &181207623
 Transform:
   m_ObjectHideFlags: 0
@@ -1802,6 +1905,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &193586288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 193586290}
+  - component: {fileID: 193586289}
+  m_Layer: 0
+  m_Name: BoatAnimationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &193586289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193586288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27dc7876aef989945ae519135b2cdb33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDuration: 5
+  boat: {fileID: 574763714}
+  nearSpeed: 0.5
+  boatSpeed: 0.4
+  farSpeed: 0.3
+  nearMaterial: {fileID: 2100000, guid: 1511d6de9a81eeb44811a5cefd4a19d5, type: 2}
+  boatMaterial: {fileID: 2100000, guid: 00851bf89fbde0f4fa561298e2ca338c, type: 2}
+  farMaterial: {fileID: 2100000, guid: c683a43f68f2a5d43a373ffcd786cc85, type: 2}
+  finalCameraPosition: {x: -10.5, y: 0, z: -1}
+  finalCameraSize: 34
+  cameraMoveDuration: 3
+--- !u!4 &193586290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193586288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &199153015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,7 +1972,7 @@ GameObject:
   - component: {fileID: 199153018}
   - component: {fileID: 199153017}
   m_Layer: 0
-  m_Name: Plank3
+  m_Name: Plank3_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1847,7 +2004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 4
   shapeAngle: 0
 --- !u!70 &199153018
 CapsuleCollider2D:
@@ -2338,7 +2495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &279173017
 Transform:
   m_ObjectHideFlags: 0
@@ -2352,16 +2509,16 @@ Transform:
   m_Children:
   - {fileID: 804183786}
   - {fileID: 1383223344}
-  - {fileID: 436034294}
   - {fileID: 819212799}
-  - {fileID: 106533046}
   - {fileID: 48746167}
   - {fileID: 2059849434}
   - {fileID: 1373325027}
-  - {fileID: 1771862269}
-  - {fileID: 1975711864}
   - {fileID: 19316274}
   - {fileID: 1893910009}
+  - {fileID: 436034294}
+  - {fileID: 106533046}
+  - {fileID: 1771862269}
+  - {fileID: 1975711864}
   - {fileID: 1422196921}
   - {fileID: 1773510882}
   - {fileID: 2016257671}
@@ -2382,8 +2539,10 @@ GameObject:
   m_Component:
   - component: {fileID: 289460249}
   - component: {fileID: 289460248}
+  - component: {fileID: 289460251}
+  - component: {fileID: 289460250}
   m_Layer: 0
-  m_Name: Plank4
+  m_Name: Plank4_90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2455,6 +2614,36 @@ Transform:
   m_Father: {fileID: 314258419}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &289460250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289460247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 5
+  shapeAngle: 6
+--- !u!70 &289460251
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289460247}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 7.920002, y: 2.8000007}
+  m_Direction: 1
 --- !u!1 &292715072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,7 +2774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &314258419
 Transform:
   m_ObjectHideFlags: 0
@@ -2600,14 +2789,14 @@ Transform:
   - {fileID: 1952916753}
   - {fileID: 1790388688}
   - {fileID: 1040078855}
-  - {fileID: 1579449480}
   - {fileID: 1780998558}
-  - {fileID: 149823800}
   - {fileID: 1622740330}
   - {fileID: 1230338471}
+  - {fileID: 64481621}
+  - {fileID: 1579449480}
+  - {fileID: 149823800}
   - {fileID: 540409230}
   - {fileID: 1489444278}
-  - {fileID: 64481621}
   - {fileID: 513796487}
   - {fileID: 600623968}
   - {fileID: 614589787}
@@ -2921,8 +3110,10 @@ GameObject:
   m_Component:
   - component: {fileID: 399425923}
   - component: {fileID: 399425922}
+  - component: {fileID: 399425925}
+  - component: {fileID: 399425924}
   m_Layer: 0
-  m_Name: Plank3
+  m_Name: Plank3_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2994,6 +3185,36 @@ Transform:
   m_Father: {fileID: 314258419}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &399425924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399425921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 4
+  shapeAngle: 0
+--- !u!70 &399425925
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399425921}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 9.75, y: 2.8}
+  m_Direction: 1
 --- !u!1 &402016386
 GameObject:
   m_ObjectHideFlags: 0
@@ -3119,6 +3340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 403586178}
   - component: {fileID: 403586179}
+  - component: {fileID: 403586180}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -3191,6 +3413,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &403586180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403586177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &436034293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3204,7 +3438,7 @@ GameObject:
   - component: {fileID: 436034296}
   - component: {fileID: 436034295}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3222,7 +3456,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 279173017}
-  m_RootOrder: 2
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &436034295
 MonoBehaviour:
@@ -3236,8 +3470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
-  shapeAngle: 0
+  shapeType: 1
+  shapeAngle: 6
 --- !u!70 &436034296
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3315,6 +3549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 439957557}
   - component: {fileID: 439957558}
+  - component: {fileID: 439957559}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -3387,6 +3622,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &439957559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439957556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &479912245
 GameObject:
   m_ObjectHideFlags: 0
@@ -3479,8 +3726,10 @@ GameObject:
   m_Component:
   - component: {fileID: 513796487}
   - component: {fileID: 513796486}
+  - component: {fileID: 513796489}
+  - component: {fileID: 513796488}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3552,6 +3801,36 @@ Transform:
   m_Father: {fileID: 314258419}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!114 &513796488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513796485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 1
+  shapeAngle: 3
+--- !u!70 &513796489
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513796485}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 15.6, y: 2.8}
+  m_Direction: 1
 --- !u!1 &528448692
 GameObject:
   m_ObjectHideFlags: 0
@@ -3657,8 +3936,10 @@ GameObject:
   m_Component:
   - component: {fileID: 540409230}
   - component: {fileID: 540409229}
+  - component: {fileID: 540409232}
+  - component: {fileID: 540409231}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_120
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3728,8 +4009,38 @@ Transform:
   m_Children:
   - {fileID: 564458459}
   m_Father: {fileID: 314258419}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 120}
+--- !u!114 &540409231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540409228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 1
+  shapeAngle: 8
+--- !u!70 &540409232
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540409228}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 15.6, y: 2.8}
+  m_Direction: 1
 --- !u!1 &564458458
 GameObject:
   m_ObjectHideFlags: 0
@@ -3740,6 +4051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 564458459}
   - component: {fileID: 564458460}
+  - component: {fileID: 564458461}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -3812,6 +4124,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &564458461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564458458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &574763714
 GameObject:
   m_ObjectHideFlags: 0
@@ -3829,7 +4153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &574763715
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3903,7 +4227,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574763714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: dd19f7841a8c68749a349b8eca05466f, type: 2}
   m_CullingMode: 0
@@ -4039,8 +4363,10 @@ GameObject:
   m_Component:
   - component: {fileID: 600623968}
   - component: {fileID: 600623967}
+  - component: {fileID: 600623970}
+  - component: {fileID: 600623969}
   m_Layer: 0
-  m_Name: Plank1
+  m_Name: Plank1_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4112,6 +4438,36 @@ Transform:
   m_Father: {fileID: 314258419}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!114 &600623969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600623966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 2
+  shapeAngle: 3
+--- !u!70 &600623970
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600623966}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 13.54, y: 2.8}
+  m_Direction: 1
 --- !u!1 &608580883
 GameObject:
   m_ObjectHideFlags: 0
@@ -4236,8 +4592,10 @@ GameObject:
   m_Component:
   - component: {fileID: 614589787}
   - component: {fileID: 614589786}
+  - component: {fileID: 614589789}
+  - component: {fileID: 614589788}
   m_Layer: 0
-  m_Name: Plank1
+  m_Name: Plank1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4309,6 +4667,36 @@ Transform:
   m_Father: {fileID: 314258419}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &614589788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614589785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 2
+  shapeAngle: 0
+--- !u!70 &614589789
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614589785}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 13.54, y: 2.8}
+  m_Direction: 1
 --- !u!1 &633686510
 GameObject:
   m_ObjectHideFlags: 0
@@ -4528,8 +4916,10 @@ GameObject:
   m_Component:
   - component: {fileID: 742517093}
   - component: {fileID: 742517092}
+  - component: {fileID: 742517095}
+  - component: {fileID: 742517094}
   m_Layer: 0
-  m_Name: Plank2
+  m_Name: Plank2_135
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4601,6 +4991,36 @@ Transform:
   m_Father: {fileID: 314258419}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
+--- !u!114 &742517094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742517091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 3
+  shapeAngle: 9
+--- !u!70 &742517095
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742517091}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 11.090003, y: 2.8000007}
+  m_Direction: 1
 --- !u!1 &753632752
 GameObject:
   m_ObjectHideFlags: 0
@@ -4726,6 +5146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 768882364}
   - component: {fileID: 768882365}
+  - component: {fileID: 768882366}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -4798,6 +5219,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &768882366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768882363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &792656366
 GameObject:
   m_ObjectHideFlags: 0
@@ -4846,7 +5279,7 @@ GameObject:
   - component: {fileID: 804183788}
   - component: {fileID: 804183787}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4878,7 +5311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 1
   shapeAngle: 0
 --- !u!70 &804183788
 CapsuleCollider2D:
@@ -4957,8 +5390,10 @@ GameObject:
   m_Component:
   - component: {fileID: 808063233}
   - component: {fileID: 808063232}
+  - component: {fileID: 808063235}
+  - component: {fileID: 808063234}
   m_Layer: 0
-  m_Name: Plank4
+  m_Name: Plank4_90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5030,6 +5465,36 @@ Transform:
   m_Father: {fileID: 314258419}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &808063234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808063231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 5
+  shapeAngle: 6
+--- !u!70 &808063235
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808063231}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 7.920002, y: 2.8000007}
+  m_Direction: 1
 --- !u!1 &819212798
 GameObject:
   m_ObjectHideFlags: 0
@@ -5043,7 +5508,7 @@ GameObject:
   - component: {fileID: 819212801}
   - component: {fileID: 819212800}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5061,7 +5526,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 279173017}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &819212800
 MonoBehaviour:
@@ -5075,7 +5540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 1
   shapeAngle: 0
 --- !u!70 &819212801
 CapsuleCollider2D:
@@ -5611,6 +6076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 886468769}
   - component: {fileID: 886468770}
+  - component: {fileID: 886468771}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -5683,6 +6149,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &886468771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886468768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &890028691
 GameObject:
   m_ObjectHideFlags: 0
@@ -6040,7 +6518,7 @@ GameObject:
   - component: {fileID: 955886014}
   - component: {fileID: 955886013}
   m_Layer: 0
-  m_Name: Plank4
+  m_Name: Plank4_90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6072,8 +6550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
-  shapeAngle: 0
+  shapeType: 5
+  shapeAngle: 6
 --- !u!70 &955886014
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6151,8 +6629,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1040078855}
   - component: {fileID: 1040078854}
+  - component: {fileID: 1040078857}
+  - component: {fileID: 1040078856}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6224,6 +6704,36 @@ Transform:
   m_Father: {fileID: 314258419}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1040078856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040078853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 1
+  shapeAngle: 0
+--- !u!70 &1040078857
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040078853}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 15.6, y: 2.8}
+  m_Direction: 1
 --- !u!1 &1097556256
 GameObject:
   m_ObjectHideFlags: 0
@@ -6443,6 +6953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1100474046}
   - component: {fileID: 1100474047}
+  - component: {fileID: 1100474048}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -6515,6 +7026,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1100474048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100474045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1112550497
 GameObject:
   m_ObjectHideFlags: 0
@@ -6525,6 +7048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1112550498}
   - component: {fileID: 1112550499}
+  - component: {fileID: 1112550500}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -6597,6 +7121,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1112550500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112550497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1124288377
 GameObject:
   m_ObjectHideFlags: 0
@@ -6931,6 +7467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1208808279}
   - component: {fileID: 1208808280}
+  - component: {fileID: 1208808281}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -7003,6 +7540,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1208808281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208808278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1230338469
 GameObject:
   m_ObjectHideFlags: 0
@@ -7013,8 +7562,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1230338471}
   - component: {fileID: 1230338470}
+  - component: {fileID: 1230338473}
+  - component: {fileID: 1230338472}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7084,8 +7635,38 @@ Transform:
   m_Children:
   - {fileID: 403586178}
   m_Father: {fileID: 314258419}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1230338472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230338469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 1
+  shapeAngle: 0
+--- !u!70 &1230338473
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230338469}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 15.6, y: 2.8}
+  m_Direction: 1
 --- !u!1 &1238760555
 GameObject:
   m_ObjectHideFlags: 0
@@ -7616,6 +8197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1313729158}
   - component: {fileID: 1313729159}
+  - component: {fileID: 1313729160}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -7688,6 +8270,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1313729160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313729157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1357138433
 GameObject:
   m_ObjectHideFlags: 0
@@ -7796,7 +8390,7 @@ GameObject:
   - component: {fileID: 1373325029}
   - component: {fileID: 1373325028}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7814,7 +8408,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 279173017}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1373325028
 MonoBehaviour:
@@ -7828,7 +8422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 1
   shapeAngle: 0
 --- !u!70 &1373325029
 CapsuleCollider2D:
@@ -7910,7 +8504,7 @@ GameObject:
   - component: {fileID: 1383223346}
   - component: {fileID: 1383223345}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7942,7 +8536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 1
   shapeAngle: 0
 --- !u!70 &1383223346
 CapsuleCollider2D:
@@ -8136,6 +8730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1409582449}
   - component: {fileID: 1409582450}
+  - component: {fileID: 1409582451}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -8208,6 +8803,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1409582451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409582448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1422196920
 GameObject:
   m_ObjectHideFlags: 0
@@ -8221,7 +8828,7 @@ GameObject:
   - component: {fileID: 1422196923}
   - component: {fileID: 1422196922}
   m_Layer: 0
-  m_Name: Plank1
+  m_Name: Plank1_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8253,8 +8860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
-  shapeAngle: 0
+  shapeType: 2
+  shapeAngle: 3
 --- !u!70 &1422196923
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8427,6 +9034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1428225771}
   - component: {fileID: 1428225772}
+  - component: {fileID: 1428225773}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -8499,6 +9107,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1428225773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428225770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1429772178
 GameObject:
   m_ObjectHideFlags: 0
@@ -8609,7 +9229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1449242170
 Transform:
   m_ObjectHideFlags: 0
@@ -8653,8 +9273,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1489444278}
   - component: {fileID: 1489444277}
+  - component: {fileID: 1489444280}
+  - component: {fileID: 1489444279}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_120
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8724,8 +9346,38 @@ Transform:
   m_Children:
   - {fileID: 1100474046}
   m_Father: {fileID: 314258419}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 120}
+--- !u!114 &1489444279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489444276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 1
+  shapeAngle: 8
+--- !u!70 &1489444280
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489444276}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 15.6, y: 2.8}
+  m_Direction: 1
 --- !u!1 &1502277588
 GameObject:
   m_ObjectHideFlags: 0
@@ -8926,8 +9578,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1579449480}
   - component: {fileID: 1579449479}
+  - component: {fileID: 1579449482}
+  - component: {fileID: 1579449481}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8997,8 +9651,38 @@ Transform:
   m_Children:
   - {fileID: 73329444}
   m_Father: {fileID: 314258419}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1579449481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579449478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 1
+  shapeAngle: 6
+--- !u!70 &1579449482
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579449478}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 15.600004, y: 2.8000007}
+  m_Direction: 1
 --- !u!1 &1622740328
 GameObject:
   m_ObjectHideFlags: 0
@@ -9009,8 +9693,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1622740330}
   - component: {fileID: 1622740329}
+  - component: {fileID: 1622740332}
+  - component: {fileID: 1622740331}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9080,8 +9766,38 @@ Transform:
   m_Children:
   - {fileID: 2037439452}
   m_Father: {fileID: 314258419}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1622740331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622740328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 1
+  shapeAngle: 0
+--- !u!70 &1622740332
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622740328}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 15.6, y: 2.8}
+  m_Direction: 1
 --- !u!1 &1624434801
 GameObject:
   m_ObjectHideFlags: 0
@@ -9092,8 +9808,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1624434803}
   - component: {fileID: 1624434802}
+  - component: {fileID: 1624434805}
+  - component: {fileID: 1624434804}
   m_Layer: 0
-  m_Name: Plank2
+  m_Name: Plank2_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9165,6 +9883,36 @@ Transform:
   m_Father: {fileID: 314258419}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!114 &1624434804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624434801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 3
+  shapeAngle: 3
+--- !u!70 &1624434805
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624434801}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 11.09, y: 2.8}
+  m_Direction: 1
 --- !u!1 &1647636994
 GameObject:
   m_ObjectHideFlags: 0
@@ -9175,6 +9923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1647636995}
   - component: {fileID: 1647636996}
+  - component: {fileID: 1647636997}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -9247,6 +9996,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1647636997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647636994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1659608855
 GameObject:
   m_ObjectHideFlags: 0
@@ -9583,7 +10344,7 @@ GameObject:
   - component: {fileID: 1771862271}
   - component: {fileID: 1771862270}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_120
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9601,7 +10362,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 279173017}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 120}
 --- !u!114 &1771862270
 MonoBehaviour:
@@ -9615,8 +10376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
-  shapeAngle: 0
+  shapeType: 1
+  shapeAngle: 8
 --- !u!70 &1771862271
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9697,7 +10458,7 @@ GameObject:
   - component: {fileID: 1773510884}
   - component: {fileID: 1773510883}
   m_Layer: 0
-  m_Name: Plank1
+  m_Name: Plank1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9729,7 +10490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 2
   shapeAngle: 0
 --- !u!70 &1773510884
 CapsuleCollider2D:
@@ -9808,8 +10569,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1780998558}
   - component: {fileID: 1780998557}
+  - component: {fileID: 1780998560}
+  - component: {fileID: 1780998559}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9879,8 +10642,38 @@ Transform:
   m_Children:
   - {fileID: 1647636995}
   m_Father: {fileID: 314258419}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1780998559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780998556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 1
+  shapeAngle: 0
+--- !u!70 &1780998560
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780998556}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 15.6, y: 2.8}
+  m_Direction: 1
 --- !u!1 &1790388686
 GameObject:
   m_ObjectHideFlags: 0
@@ -9891,8 +10684,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1790388688}
   - component: {fileID: 1790388687}
+  - component: {fileID: 1790388690}
+  - component: {fileID: 1790388689}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9964,6 +10759,36 @@ Transform:
   m_Father: {fileID: 314258419}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1790388689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790388686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 1
+  shapeAngle: 0
+--- !u!70 &1790388690
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790388686}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 15.6, y: 2.8}
+  m_Direction: 1
 --- !u!1 &1824656483
 GameObject:
   m_ObjectHideFlags: 0
@@ -9977,7 +10802,7 @@ GameObject:
   - component: {fileID: 1824656486}
   - component: {fileID: 1824656485}
   m_Layer: 0
-  m_Name: Plank4
+  m_Name: Plank4_90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10009,8 +10834,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
-  shapeAngle: 0
+  shapeType: 5
+  shapeAngle: 6
 --- !u!70 &1824656486
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10393,6 +11218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1858777142}
   - component: {fileID: 1858777143}
+  - component: {fileID: 1858777144}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -10465,6 +11291,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1858777144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858777141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1893910008
 GameObject:
   m_ObjectHideFlags: 0
@@ -10478,7 +11316,7 @@ GameObject:
   - component: {fileID: 1893910011}
   - component: {fileID: 1893910010}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10496,7 +11334,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 279173017}
-  m_RootOrder: 11
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
 --- !u!114 &1893910010
 MonoBehaviour:
@@ -10510,8 +11348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
-  shapeAngle: 0
+  shapeType: 1
+  shapeAngle: 3
 --- !u!70 &1893910011
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -10589,6 +11427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1934903147}
   - component: {fileID: 1934903148}
+  - component: {fileID: 1934903149}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -10661,6 +11500,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1934903149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934903146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1942481933
 GameObject:
   m_ObjectHideFlags: 0
@@ -10785,8 +11636,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1952916753}
   - component: {fileID: 1952916752}
+  - component: {fileID: 1952916755}
+  - component: {fileID: 1952916754}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10858,6 +11711,36 @@ Transform:
   m_Father: {fileID: 314258419}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1952916754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952916751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aad3e5c2e90a4a43bc25a99cfbc6c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shapeType: 1
+  shapeAngle: 0
+--- !u!70 &1952916755
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952916751}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 15.6, y: 2.8}
+  m_Direction: 1
 --- !u!1 &1975711863
 GameObject:
   m_ObjectHideFlags: 0
@@ -10871,7 +11754,7 @@ GameObject:
   - component: {fileID: 1975711866}
   - component: {fileID: 1975711865}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_120
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10889,7 +11772,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 279173017}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 120}
 --- !u!114 &1975711865
 MonoBehaviour:
@@ -10903,8 +11786,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
-  shapeAngle: 0
+  shapeType: 1
+  shapeAngle: 8
 --- !u!70 &1975711866
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11525,7 +12408,7 @@ GameObject:
   - component: {fileID: 2016257673}
   - component: {fileID: 2016257672}
   m_Layer: 0
-  m_Name: Plank2
+  m_Name: Plank2_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11557,8 +12440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
-  shapeAngle: 0
+  shapeType: 3
+  shapeAngle: 3
 --- !u!70 &2016257673
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11731,6 +12614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2037439452}
   - component: {fileID: 2037439453}
+  - component: {fileID: 2037439454}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -11803,6 +12687,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2037439454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037439451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2045910302
 GameObject:
   m_ObjectHideFlags: 0
@@ -11813,6 +12709,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2045910303}
   - component: {fileID: 2045910304}
+  - component: {fileID: 2045910305}
   m_Layer: 0
   m_Name: Outline
   m_TagString: Untagged
@@ -11885,6 +12782,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2045910305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045910302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87785cb25064e104797fc07a2d11384e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2047375318
 GameObject:
   m_ObjectHideFlags: 0
@@ -11993,7 +12902,7 @@ GameObject:
   - component: {fileID: 2059849436}
   - component: {fileID: 2059849435}
   m_Layer: 0
-  m_Name: Plank0
+  m_Name: Plank0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12011,7 +12920,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 279173017}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2059849435
 MonoBehaviour:
@@ -12025,7 +12934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc652c105435d34eb33563b31f86e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shapeType: 0
+  shapeType: 1
   shapeAngle: 0
 --- !u!70 &2059849436
 CapsuleCollider2D:

@@ -307,7 +307,7 @@ MonoBehaviour:
     category: music
     clip: {fileID: 8300000, guid: 70ed27ad409c8014189a86bb59ed9f4f, type: 3}
     priority: 128
-    volume: 0.7
+    volume: 0.3
     pitch: 1
     loop: 1
 --- !u!4 &81404665
@@ -2196,10 +2196,10 @@ RectTransform:
   m_Father: {fileID: 988116459}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.01, y: 0.02}
-  m_AnchorMax: {x: 0.3, y: 0.65}
-  m_AnchoredPosition: {x: 625.8137, y: 261.1417}
-  m_SizeDelta: {x: -50.5406, y: -163.8214}
+  m_AnchorMin: {x: 0.71, y: 0.68}
+  m_AnchorMax: {x: 0.95, y: 0.99}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &899929410
 MonoBehaviour:
@@ -2585,6 +2585,8 @@ MonoBehaviour:
   tutorialCanvas: {fileID: 1372837947}
   optionsMenuCanvas: {fileID: 368217024}
   restartGameConfirmationCanvas: {fileID: 629482067}
+  exampleCanvas: {fileID: 988116455}
+  shapesTable: {fileID: 1255613074}
   updateTextEvent: {fileID: 11400000, guid: adbf113636340ed42a0eab205d16f69f, type: 2}
 --- !u!4 &1160100496
 Transform:
@@ -4856,38 +4858,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - levelName: Triangle
-    shapeText: Triangle
-    finalCameraPosition: {x: 0, y: 0}
-    finalCameraSize: 0
-  - levelName: Square
-    shapeText: Square
-    finalCameraPosition: {x: 0, y: 0}
-    finalCameraSize: 0
-  - levelName: Rectangle
-    shapeText: Rectangle
-    finalCameraPosition: {x: 0, y: 0}
-    finalCameraSize: 0
-  - levelName: House
-    shapeText: House
-    finalCameraPosition: {x: 0, y: 0}
-    finalCameraSize: 0
-  - levelName: Car
-    shapeText: Car
-    finalCameraPosition: {x: 0, y: 0}
-    finalCameraSize: 0
   - levelName: Boat
     shapeText: Boat
-    finalCameraPosition: {x: 0, y: 0}
-    finalCameraSize: 0
+  - levelName: Triangle
+    shapeText: Triangle
+  - levelName: Square
+    shapeText: Square
+  - levelName: Rectangle
+    shapeText: Rectangle
+  - levelName: House
+    shapeText: House
+  - levelName: Car
+    shapeText: Car
   - levelName: Windmill
     shapeText: Windmill
-    finalCameraPosition: {x: 0, y: 0}
-    finalCameraSize: 0
   - levelName: Star
     shapeText: Star
-    finalCameraPosition: {x: 0, y: 0}
-    finalCameraSize: 0
   transitionAnimator: {fileID: 1861730167}
   transitionTime: 1
   levelFinishedEvent: {fileID: 11400000, guid: 30c848c8137f0bd43b4f7ddc9729b78f, type: 2}

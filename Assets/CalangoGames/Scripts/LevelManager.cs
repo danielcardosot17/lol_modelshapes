@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,8 +14,7 @@ namespace CalangoGames
     {
         public string levelName;
         public string shapeText;
-        public Vector2 finalCameraPosition;
-        public float finalCameraSize;
+
         private bool isLoaded = false;
         public bool IsLoaded { get => isLoaded; set => isLoaded = value; }
 
@@ -50,7 +50,9 @@ namespace CalangoGames
         public int NumberOfSlots { get => numberOfSlots; set => numberOfSlots = value; }
         public int NumberOfOccupiedSlots { get => numberOfOccupiedSlots; set => numberOfOccupiedSlots = value; }
         public List<Level> Levels { get => levels; set => levels = value; }
+        public IAnimationManager AnimationManager { get => animationManager; set => animationManager = value; }
 
+        private IAnimationManager animationManager;
 
         private List<Shape> shapesInScene;
         private List<ShapeSlot> slotsInScene;
@@ -58,16 +60,37 @@ namespace CalangoGames
         private int numberOfShapes = 0;
         private int numberOfSlots = 0;
         private int numberOfOccupiedSlots = 0;
+        private Camera mainCamera;
 
-        private void Awake() {
+        private void Awake()
+        {
+            mainCamera = Camera.main;
             currentLevel = levels[0];
             textManager = FindObjectOfType<TextManager>();
         }
 
         public void StartLevelAnimation()
         {
-
+            HideShapesAndSlots();
+            animationManager.ShowFinishedShape();
+            animationManager.StartShapeAnimation();
+            animationManager.StartBackgroundAnimation();
+            animationManager.MoveCamera();
+            animationManager.StartSFX();
         }
+
+        private void HideShapesAndSlots()
+        {
+            foreach(var slot in slotsInScene)
+            {
+                slot.gameObject.SetActive(false);
+            }
+            foreach (var shape in shapesInScene)
+            {
+                shape.gameObject.SetActive(false);
+            }
+        }
+
         public IEnumerator LoadLevel(Level level)
         {
             // start transition
@@ -95,10 +118,20 @@ namespace CalangoGames
             FindShapesInScene();
             FindSlotsInScene();
             SetSlotsOccupyEvent();
+
+            animationManager = FindObjectsOfType<MonoBehaviour>().OfType<IAnimationManager>().ToArray()[0];
+
             textManager.UpdateLevelNameText(level.shapeText);
             //textManager.CancelText();
             textManager.SpeakText(level.shapeText.ToLower());
         }
+
+        public void ResetCameraPositionAndSize()
+        {
+            mainCamera.transform.position = -1 * Vector3.forward;
+            mainCamera.orthographicSize = 20;
+        }
+
         private void SetSlotsOccupyEvent()
         {
             foreach (var slot in slotsInScene)

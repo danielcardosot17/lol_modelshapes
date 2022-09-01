@@ -13,6 +13,8 @@ namespace CalangoGames
         [SerializeField] private GameObject tutorialCanvas;
         [SerializeField] private GameObject optionsMenuCanvas;
         [SerializeField] private GameObject restartGameConfirmationCanvas;
+        [SerializeField] private GameObject exampleCanvas;
+        [SerializeField] private GameObject shapesTable;
         [SerializeField] private GameEventSO updateTextEvent;
 
         private LevelManager levelManager;
@@ -104,8 +106,10 @@ namespace CalangoGames
 
         private IEnumerator LevelFinishedAnimation()
         {
+            HideExampleCanvasAndShapesTable();
             levelManager.StartLevelAnimation();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(levelManager.AnimationManager.GetAnimationDuration());
+            levelManager.ResetCameraPositionAndSize();
             lolAdapter.IncreaseProgress();
             lolAdapter.SavePlayerProgress();
             if(levelManager.IsLastLevel())
@@ -119,6 +123,17 @@ namespace CalangoGames
             }
         }
 
+        private void HideExampleCanvasAndShapesTable()
+        {
+            exampleCanvas.SetActive(false);
+            shapesTable.SetActive(false);
+        }
+        private void ShowExampleCanvasAndShapesTable()
+        {
+            exampleCanvas.SetActive(true);
+            shapesTable.SetActive(true);
+        }
+
         public void GoNextLevel()
         {
             levelManager.LoadNextLevel();
@@ -126,6 +141,7 @@ namespace CalangoGames
             lolAdapter.SavePlayerProgress();
             lolAdapter.SaveGame();
             HideCongratulationCanvas();
+            ShowExampleCanvasAndShapesTable();
         }
 
         public void PauseGame()
