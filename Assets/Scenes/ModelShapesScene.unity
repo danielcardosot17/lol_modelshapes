@@ -316,6 +316,20 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1.5
     loop: 0
+  - name: Congratulations
+    category: sfx
+    clip: {fileID: 8300000, guid: a364c9edba60c9c4abb7c431b8020e7b, type: 3}
+    priority: 96
+    volume: 0.4
+    pitch: 1.5
+    loop: 0
+  - name: Success
+    category: sfx
+    clip: {fileID: 8300000, guid: 6647def711b4fc44f87c6fcaf1b98589, type: 3}
+    priority: 96
+    volume: 0.4
+    pitch: 1.5
+    loop: 0
   musics:
   - name: Music
     category: music

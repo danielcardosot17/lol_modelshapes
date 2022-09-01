@@ -159,6 +159,8 @@ namespace CalangoGames
 
         public void ShowCongratulationCanvas()
         {
+            audioManager.PauseAllSFX();
+            audioManager.PlaySFX("Congratulations");
             congratulationsCanvas.SetActive(true);
             //textManager.CancelText();
             textManager.SpeakText("congrats");

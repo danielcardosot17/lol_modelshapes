@@ -10,9 +10,11 @@ namespace CalangoGames
         [SerializeField] private List<Sound> soundEffcts;
         [SerializeField] private List<Sound> musics;
         private AudioSource audioSource;
+        private List<AudioSource> sfxSources;
 
 
         private void Awake() {
+            sfxSources = new List<AudioSource>();
             audioSource = GetComponent<AudioSource>();
             StopMusic();
         }
@@ -48,9 +50,15 @@ namespace CalangoGames
             source.pitch = sound.pitch;
             source.loop = sound.loop;
             source.Play();
-            if(!source.loop)
+            sfxSources.Add(source);
+            if (!source.loop)
             {
-                Destroy(source.gameObject, source.clip.length/source.pitch);
+                StartCoroutine(DoAfterTimeCoroutine(source.clip.length / source.pitch, () =>
+                {
+                    sfxSources.Remove(source);
+                    Destroy(source.gameObject);
+                }));
+                //Destroy(source.gameObject, source.clip.length/source.pitch);
             }
         }
 
@@ -62,6 +70,19 @@ namespace CalangoGames
         public void ResumeMusic()
         {
             audioSource.Play();
+        }
+
+        public void PauseAllSFX()
+        {
+            foreach(var sfx in sfxSources)
+            {
+                sfx.Pause();
+            }
+        }
+        public static IEnumerator DoAfterTimeCoroutine(float time, Action action)
+        {
+            yield return new WaitForSeconds(time);
+            action();
         }
     }
 }
