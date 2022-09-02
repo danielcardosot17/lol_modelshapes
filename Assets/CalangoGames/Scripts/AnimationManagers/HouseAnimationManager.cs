@@ -4,14 +4,15 @@ using UnityEngine;
 
 namespace CalangoGames
 {
-    public class TriangleAnimationManager : MonoBehaviour, IAnimationManager
+    public class HouseAnimationManager : MonoBehaviour, IAnimationManager
     {
         public float animationDuration;
-        public GameObject triangle;
+        public GameObject house;
         private AudioManager audioManager;
         public Vector3 finalCameraPosition;
         private Camera mainCamera;
         public float cameraMoveDuration;
+        public float finalCameraSize;
 
         private void Awake()
         {
@@ -27,11 +28,12 @@ namespace CalangoGames
         public void MoveCamera()
         {
             StartCoroutine(LerpPosition(finalCameraPosition, cameraMoveDuration));
+            StartCoroutine(LerpCameraSize(finalCameraSize, cameraMoveDuration));
         }
 
         public void ShowFinishedShape()
         {
-            triangle.SetActive(true);
+            house.SetActive(true);
         }
 
         public void StartBackgroundAnimation()
@@ -45,7 +47,7 @@ namespace CalangoGames
 
         public void StartShapeAnimation()
         {
-            triangle.GetComponent<Animator>().enabled = true;
+
         }
 
 
@@ -60,6 +62,19 @@ namespace CalangoGames
                 yield return null;
             }
             mainCamera.transform.position = targetPosition;
+        }
+        IEnumerator LerpCameraSize(float endValue, float duration)
+        {
+            float time = 0;
+            float startValue = 20;
+            while (time < duration)
+            {
+                mainCamera.orthographicSize = Mathf.Lerp(startValue, endValue, time / duration);
+                time += Time.deltaTime;
+                yield return null;
+            }
+
+            mainCamera.orthographicSize = endValue;
         }
     }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace CalangoGames
 {
-    public class TriangleAnimationManager : MonoBehaviour, IAnimationManager
+    public class RectangleAnimationManager : MonoBehaviour, IAnimationManager
     {
         public float animationDuration;
-        public GameObject triangle;
+        public GameObject rectangle;
         private AudioManager audioManager;
         public Vector3 finalCameraPosition;
         private Camera mainCamera;
@@ -31,7 +31,7 @@ namespace CalangoGames
 
         public void ShowFinishedShape()
         {
-            triangle.SetActive(true);
+            rectangle.SetActive(true);
         }
 
         public void StartBackgroundAnimation()
@@ -45,7 +45,7 @@ namespace CalangoGames
 
         public void StartShapeAnimation()
         {
-            triangle.GetComponent<Animator>().enabled = true;
+            rectangle.GetComponent<Animator>().enabled = true;
         }
 
 
