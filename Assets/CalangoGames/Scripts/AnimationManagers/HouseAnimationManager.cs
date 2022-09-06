@@ -13,6 +13,7 @@ namespace CalangoGames
         private Camera mainCamera;
         public float cameraMoveDuration;
         public float finalCameraSize;
+        public GameObject wind;
 
         private void Awake()
         {
@@ -34,6 +35,7 @@ namespace CalangoGames
         public void ShowFinishedShape()
         {
             house.SetActive(true);
+            wind.SetActive(true);
         }
 
         public void StartBackgroundAnimation()
@@ -47,7 +49,6 @@ namespace CalangoGames
 
         public void StartShapeAnimation()
         {
-
         }
 
 

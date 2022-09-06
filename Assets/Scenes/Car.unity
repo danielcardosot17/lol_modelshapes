@@ -5807,6 +5807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1695026378}
+  - component: {fileID: 1695026379}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -5830,6 +5831,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1695026379
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695026377}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3abdfc33568257543892f6fe01340f0f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1699901378
 GameObject:
   m_ObjectHideFlags: 0
@@ -6268,6 +6288,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1823743370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1823743371}
+  - component: {fileID: 1823743372}
+  m_Layer: 0
+  m_Name: CarAnimationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1823743371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823743370}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1823743372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823743370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1906e92fdeefb40bd6eb2bde181753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDuration: 10
+  car: {fileID: 1695026377}
+  car_tireless: {fileID: 383967523}
+  nearSpeed: -0.1
+  farSpeed: -0.05
+  nearMaterial: {fileID: 2100000, guid: 4c13feed98cd51e4493361b5944d7fe5, type: 2}
+  farMaterial: {fileID: 2100000, guid: e6339420c5e225646b0c169669e74add, type: 2}
+  finalCameraPosition: {x: -9, y: 20, z: -1}
+  finalCameraSize: 53
+  cameraMoveDuration: 5
 --- !u!1 &1840117210
 GameObject:
   m_ObjectHideFlags: 0

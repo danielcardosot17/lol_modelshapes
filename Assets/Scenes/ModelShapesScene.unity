@@ -330,6 +330,41 @@ MonoBehaviour:
     volume: 0.4
     pitch: 1.5
     loop: 0
+  - name: Car_Horn
+    category: sfx
+    clip: {fileID: 8300000, guid: e89af37c025a6c24d86c68ce46395ede, type: 3}
+    priority: 96
+    volume: 0.2
+    pitch: 1.5
+    loop: 0
+  - name: Car_Engine
+    category: sfx
+    clip: {fileID: 8300000, guid: 0b024f1b20d260443b1f3d9f02da2828, type: 3}
+    priority: 96
+    volume: 0.1
+    pitch: 1
+    loop: 1
+  - name: Windmill_Wind
+    category: sfx
+    clip: {fileID: 8300000, guid: 2d3bb6152e89f5a43903361f53102f3e, type: 3}
+    priority: 96
+    volume: 0.2
+    pitch: 2
+    loop: 1
+  - name: Star_Chimes
+    category: sfx
+    clip: {fileID: 8300000, guid: 124c5f68ab98d6d479f9b2926a111831, type: 3}
+    priority: 96
+    volume: 0.2
+    pitch: 1
+    loop: 1
+  - name: Star_Sparkle
+    category: sfx
+    clip: {fileID: 8300000, guid: ee1679e473eeb5e4fb7e4c909e612b10, type: 3}
+    priority: 96
+    volume: 0.2
+    pitch: 1
+    loop: 0
   musics:
   - name: Music
     category: music
@@ -1437,7 +1472,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 37
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2285,7 +2320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &988116456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4886,8 +4921,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - levelName: Boat
-    shapeText: Boat
+  - levelName: Star
+    shapeText: Star
+  - levelName: Windmill
+    shapeText: Windmill
+  - levelName: Car
+    shapeText: Car
   - levelName: Triangle
     shapeText: Triangle
   - levelName: Square
@@ -4896,12 +4935,8 @@ MonoBehaviour:
     shapeText: Rectangle
   - levelName: House
     shapeText: House
-  - levelName: Car
-    shapeText: Car
-  - levelName: Windmill
-    shapeText: Windmill
-  - levelName: Star
-    shapeText: Star
+  - levelName: Boat
+    shapeText: Boat
   transitionAnimator: {fileID: 1861730167}
   transitionTime: 1
   levelFinishedEvent: {fileID: 11400000, guid: 30c848c8137f0bd43b4f7ddc9729b78f, type: 2}
