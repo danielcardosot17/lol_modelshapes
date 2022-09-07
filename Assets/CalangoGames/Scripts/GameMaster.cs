@@ -16,6 +16,9 @@ namespace CalangoGames
         [SerializeField] private GameObject exampleCanvas;
         [SerializeField] private GameObject shapesTable;
         [SerializeField] private GameEventSO updateTextEvent;
+        [SerializeField] private float showImageDuration;
+        [SerializeField] private GameObject startGameBtn;
+        [SerializeField] private GameObject hideTutorialBtn;
 
         private LevelManager levelManager;
         private LOLAdapter lolAdapter;
@@ -50,12 +53,12 @@ namespace CalangoGames
             StartCoroutine(lolAdapter.WaitForApproval());
 
             audioManager.PlayMusic("Music");
-
-            StartGame();
+            ShowTutorialCanvas(true);
         }
 
-        private void StartGame()
+        public void StartGame()
         {
+            HideTutorialCanvas();
             lolAdapter.LoadGame<SaveData>(OnLoad);
             StartCoroutine(levelManager.LoadLevel(levelManager.CurrentLevel));
         }
@@ -144,6 +147,14 @@ namespace CalangoGames
             ShowExampleCanvasAndShapesTable();
         }
 
+        public void ShowBackgroundImageForSeconds()
+        {
+            HideCongratulationCanvas();
+            StartCoroutine(DoAfterTimeCoroutine(showImageDuration, () => {
+                ShowCongratulationCanvas();
+            }));
+        }
+
         public void PauseGame()
         {
             player.DisablePlayerInput();
@@ -187,9 +198,20 @@ namespace CalangoGames
         {
             pauseCanvas.SetActive(false);
         }
-        public void ShowTutorialCanvas()
+        public void ShowTutorialCanvas(bool isStartGame)
         {
             tutorialCanvas.SetActive(true);
+            textManager.SpeakText("tutorial");
+            if(isStartGame)
+            {
+                startGameBtn.SetActive(true);
+                hideTutorialBtn.SetActive(false);
+            }
+            else
+            {
+                startGameBtn.SetActive(false);
+                hideTutorialBtn.SetActive(true);
+            }
         }
         public void HideTutorialCanvas()
         {
@@ -213,6 +235,12 @@ namespace CalangoGames
         public void HideRestartGameConfirmationCanvas()
         {
             restartGameConfirmationCanvas.SetActive(false);
+        }
+
+        public static IEnumerator DoAfterTimeCoroutine(float time, Action action)
+        {
+            yield return new WaitForSeconds(time);
+            action();
         }
     }
 }
