@@ -25,6 +25,7 @@ namespace CalangoGames
         private Player player;
         private AudioManager audioManager;
         private TextManager textManager;
+        private VideoPlayerManager videoPlayerManager;
 
         private void Awake()
         {
@@ -34,6 +35,7 @@ namespace CalangoGames
             levelManager = FindObjectOfType<LevelManager>();
             audioManager = FindObjectOfType<AudioManager>();
             textManager = FindObjectOfType<TextManager>();
+            videoPlayerManager = FindObjectOfType<VideoPlayerManager>();
             lolAdapter = new LOLAdapter();
             lolAdapter.UpdateTextEvent = updateTextEvent;
             player = FindObjectOfType<Player>();
@@ -103,6 +105,14 @@ namespace CalangoGames
         }
 
         public void LevelIsFinished()
+        {
+
+            StartCoroutine(DoAfterTimeCoroutine(2, () => {
+                BuildingShapeAnimation();
+            }));
+        }
+
+        private void BuildingShapeAnimation()
         {
             StartCoroutine(LevelFinishedAnimation());
         }
@@ -201,6 +211,7 @@ namespace CalangoGames
         public void ShowTutorialCanvas(bool isStartGame)
         {
             tutorialCanvas.SetActive(true);
+            videoPlayerManager.PlayVideo();
             textManager.SpeakText("tutorial");
             if(isStartGame)
             {
