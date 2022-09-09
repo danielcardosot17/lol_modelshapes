@@ -72,19 +72,26 @@ namespace CalangoGames
         private void ClickOrTapToRay(Vector3 screenPoint)
         {
             Ray ray = mainCamera.ScreenPointToRay(screenPoint);
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-            if(hit2D.collider != null) // hit something
+
+            GetFirstSelectableShapeOrFreeSlot(ray);
+        }
+
+        private void GetFirstSelectableShapeOrFreeSlot(Ray ray)
+        {
+            RaycastHit2D[] hit2Darray = Physics2D.GetRayIntersectionAll(ray);
+            foreach(RaycastHit2D hit2D in hit2Darray)
             {
-                if(hit2D.collider.gameObject.GetComponent<Shape>() != null) // is a Shape!
+                if (hit2D.collider.gameObject.GetComponent<Shape>() != null) // is a Shape!
                 {
                     var shape = hit2D.collider.gameObject.GetComponent<Shape>();
                     SelectShape(shape);
-                    if(shape.IsSelected)
+                    if (shape.IsSelected)
                     {
                         StartCoroutine(DragUpdate(hit2D.collider));
+                        return;
                     }
                 }
-                if(hit2D.collider.gameObject.GetComponent<ShapeSlot>() != null) // is a ShapeSlot!
+                else if (hit2D.collider.gameObject.GetComponent<ShapeSlot>() != null) // is a ShapeSlot!
                 {
                     SelectSlot(hit2D.collider.gameObject.GetComponent<ShapeSlot>());
                 }
