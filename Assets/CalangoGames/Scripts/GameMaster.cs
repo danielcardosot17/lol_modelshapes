@@ -19,6 +19,7 @@ namespace CalangoGames
         [SerializeField] private float showImageDuration;
         [SerializeField] private GameObject startGameBtn;
         [SerializeField] private GameObject hideTutorialBtn;
+        [SerializeField][Range(0.1f, 2f)] private float buildingShapeAnimationDuration = 1f;
 
         private LevelManager levelManager;
         private LOLAdapter lolAdapter;
@@ -107,7 +108,7 @@ namespace CalangoGames
         public void LevelIsFinished()
         {
 
-            StartCoroutine(DoAfterTimeCoroutine(2, () => {
+            StartCoroutine(DoAfterTimeCoroutine(buildingShapeAnimationDuration, () => {
                 BuildingShapeAnimation();
             }));
         }
@@ -159,10 +160,20 @@ namespace CalangoGames
 
         public void ShowBackgroundImageForSeconds()
         {
-            HideCongratulationCanvas();
-            StartCoroutine(DoAfterTimeCoroutine(showImageDuration, () => {
-                ShowCongratulationCanvas();
-            }));
+            if(!levelManager.IsLastLevel())
+            {
+                HideCongratulationCanvas();
+                StartCoroutine(DoAfterTimeCoroutine(showImageDuration, () => {
+                    ShowCongratulationCanvas();
+                }));
+            }
+            else
+            {
+                HideEndGameCanvas();
+                StartCoroutine(DoAfterTimeCoroutine(showImageDuration, () => {
+                    ShowEndGameCanvas();
+                }));
+            }
         }
 
         public void PauseGame()
@@ -192,7 +203,11 @@ namespace CalangoGames
         }
         public void ShowEndGameCanvas()
         {
+            audioManager.PauseAllSFX();
+            audioManager.PlaySFX("Congratulations");
             endgameCanvas.SetActive(true);
+            //textManager.CancelText();
+            textManager.SpeakText("endgame");
         }
         public void HideEndGameCanvas()
         {

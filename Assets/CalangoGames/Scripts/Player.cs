@@ -9,9 +9,9 @@ namespace CalangoGames
     public class Player : MonoBehaviour
     {
         [SerializeField][Range(0.1f, 2f)] private float moveSmoothTime = 0.5f;
+        [SerializeField][Range(0.1f, 2f)] private float moveShapeDuration = 0.5f;
         private Shape selectedShape;
         private InputActions inputActions;
-        private InputActionAsset asdasdas;
         private InputAction clickAction;
         private InputAction tapAction;
         private InputAction touchAction;
@@ -113,7 +113,7 @@ namespace CalangoGames
                     ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
                 }
                 Vector3 direction = Vector3.ProjectOnPlane(ray.origin, Vector3.forward);
-                collider.transform.position = Vector3.SmoothDamp(collider.transform.position, direction, ref velocity, moveSmoothTime/5);
+                collider.transform.position = Vector3.SmoothDamp(collider.transform.position, direction, ref velocity, moveSmoothTime);
                 yield return null;
             }
             
@@ -158,7 +158,6 @@ namespace CalangoGames
             
             if(selectedShape.ShapeType == shapeSlot.ShapeType && selectedShape.ShapeAngle == shapeSlot.ShapeAngle)
             {
-                shapeSlot.Occupy();
                 Shape shape = selectedShape;
                 StartCoroutine(MoveShapeToSlot(shape, shapeSlot));
                 selectedShape.SetNotSelectable();
@@ -168,14 +167,19 @@ namespace CalangoGames
 
         private IEnumerator MoveShapeToSlot(Shape shape, ShapeSlot shapeSlot)
         {
-            var endPosition = shapeSlot.transform.position;
-            Vector3 velocity = Vector3.zero;
-            while(Vector3.Distance(shape.transform.position, endPosition) > 0.1f)
+            float time = 0;
+            Vector3 startPosition = shape.transform.position;
+            while (time < moveShapeDuration)
             {
-                shape.transform.position = Vector3.SmoothDamp(shape.transform.position, endPosition, ref velocity, moveSmoothTime);
+                shape.transform.position = Vector3.Lerp(startPosition, shapeSlot.transform.position, time / moveShapeDuration);
+                time += Time.deltaTime;
                 yield return null;
             }
-            shape.transform.position = endPosition;
+            shape.transform.position = shapeSlot.transform.position;
+
+            // occupy only after moved
+            shapeSlot.Occupy();
+
             if (shape.ShapeType == ShapeType.Clay)
             {
                 audioManager.PlaySFX("Clay");

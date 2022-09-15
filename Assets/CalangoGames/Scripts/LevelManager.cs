@@ -50,9 +50,9 @@ namespace CalangoGames
         public int NumberOfSlots { get => numberOfSlots; set => numberOfSlots = value; }
         public int NumberOfOccupiedSlots { get => numberOfOccupiedSlots; set => numberOfOccupiedSlots = value; }
         public List<Level> Levels { get => levels; set => levels = value; }
-        public IAnimationManager AnimationManager { get => animationManager; set => animationManager = value; }
+        public IAnimationManager AnimationManager { get => sceneAnimationManager; set => sceneAnimationManager = value; }
 
-        private IAnimationManager animationManager;
+        private IAnimationManager sceneAnimationManager;
 
         private List<Shape> shapesInScene;
         private List<ShapeSlot> slotsInScene;
@@ -72,11 +72,11 @@ namespace CalangoGames
         public void StartLevelAnimation()
         {
             HideShapesAndSlots();
-            animationManager.ShowFinishedShape();
-            animationManager.StartShapeAnimation();
-            animationManager.StartBackgroundAnimation();
-            animationManager.MoveCamera();
-            animationManager.StartSFX();
+            sceneAnimationManager.ShowFinishedShape();
+            sceneAnimationManager.StartShapeAnimation();
+            sceneAnimationManager.StartBackgroundAnimation();
+            sceneAnimationManager.MoveCamera();
+            sceneAnimationManager.StartSFX();
         }
 
         private void HideShapesAndSlots()
@@ -119,11 +119,12 @@ namespace CalangoGames
             FindSlotsInScene();
             SetSlotsOccupyEvent();
 
-            animationManager = FindObjectsOfType<MonoBehaviour>().OfType<IAnimationManager>().ToArray()[0];
+            sceneAnimationManager = FindObjectsOfType<MonoBehaviour>().OfType<IAnimationManager>().ToArray()[0];
 
-            textManager.UpdateLevelNameText(level.shapeText);
-            //textManager.CancelText();
-            textManager.SpeakText(level.shapeText.ToLower());
+            StartCoroutine(DoAfterTimeCoroutine(1, () => {
+                textManager.UpdateLevelNameText(level.shapeText);
+                textManager.SpeakText(level.shapeText.ToLower());
+            }));
         }
 
         public void ResetCameraPositionAndSize()
@@ -144,12 +145,6 @@ namespace CalangoGames
         {
             slotsInScene = new List<ShapeSlot>();
             var slotArray = Resources.FindObjectsOfTypeAll(typeof(ShapeSlot)) as ShapeSlot[];
-            //foreach (ShapeSlot shapeSlot in slotArray)
-            //{
-            //    if (!EditorUtility.IsPersistent(shapeSlot.transform.root.gameObject) && !(shapeSlot.hideFlags == HideFlags.NotEditable || shapeSlot.hideFlags == HideFlags.HideAndDontSave))
-            //        slotsInScene.Add(shapeSlot);
-            //}
-            //numberOfSlots = slotsInScene.Count;
             foreach(ShapeSlot shapeSlot in slotArray)
             {
                 slotsInScene.Add(shapeSlot);
@@ -162,12 +157,6 @@ namespace CalangoGames
         {
             shapesInScene = new List<Shape>();
             var shapeArray = Resources.FindObjectsOfTypeAll(typeof(Shape)) as Shape[];
-            //foreach (Shape shape in shapeArray)
-            //{
-            //    if (!EditorUtility.IsPersistent(shape.transform.root.gameObject) && !(shape.hideFlags == HideFlags.NotEditable || shape.hideFlags == HideFlags.HideAndDontSave))
-            //        shapesInScene.Add(shape);
-            //}
-            //numberOfShapes = shapesInScene.Count;
             foreach (Shape shape in shapeArray)
             {
                 shapesInScene.Add(shape);
@@ -232,6 +221,11 @@ namespace CalangoGames
         public void SpeakLevelName()
         {
             textManager.SpeakText(currentLevel.shapeText.ToLower());
+        }
+        public static IEnumerator DoAfterTimeCoroutine(float time, Action action)
+        {
+            yield return new WaitForSeconds(time);
+            action();
         }
     }
 }
