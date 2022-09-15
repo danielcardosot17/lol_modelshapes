@@ -63,7 +63,6 @@ namespace CalangoGames
         {
             HideTutorialCanvas();
             lolAdapter.LoadGame<SaveData>(OnLoad);
-            StartCoroutine(levelManager.LoadLevel(levelManager.CurrentLevel));
         }
 
         public void RestartLevel()
@@ -80,6 +79,8 @@ namespace CalangoGames
             StartCoroutine(levelManager.UnLoadLevel(levelManager.Levels[levelIndex]));
             levelManager.CurrentLevelIndex = 0;
             levelManager.CurrentLevel = levelManager.Levels[0];
+            lolAdapter.SetSaveData(levelManager.CurrentLevelIndex);
+            lolAdapter.SaveGame();
             StartCoroutine(levelManager.LoadLevel(levelManager.CurrentLevel));
             HideRestartGameConfirmationCanvas();
             ResumeGame();
@@ -89,15 +90,15 @@ namespace CalangoGames
         {
             if (saveData != null)
             {
-                lolAdapter.SaveData = saveData;
+                lolAdapter.SetSaveData(saveData.currentLevel);
             }
             else
             {
-                lolAdapter.SaveData = new SaveData();
+                lolAdapter.SetSaveData(0);
             }
             levelManager.CurrentLevelIndex = lolAdapter.SaveData.currentLevel;
-            lolAdapter.SetSaveData(levelManager.CurrentLevelIndex);
-            lolAdapter.SavePlayerProgress();
+            levelManager.CurrentLevel = levelManager.Levels[levelManager.CurrentLevelIndex];
+            StartCoroutine(levelManager.LoadLevel(levelManager.CurrentLevel));
         }
 
         private void EndGame()
@@ -152,7 +153,6 @@ namespace CalangoGames
             levelManager.ResetCameraPositionAndSize();
             levelManager.LoadNextLevel();
             lolAdapter.SetSaveData(levelManager.CurrentLevelIndex);
-            lolAdapter.SavePlayerProgress();
             lolAdapter.SaveGame();
             HideCongratulationCanvas();
             ShowExampleCanvasAndShapesTable();

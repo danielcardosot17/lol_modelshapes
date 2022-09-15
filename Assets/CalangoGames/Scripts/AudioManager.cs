@@ -69,7 +69,10 @@ namespace CalangoGames
 
         public void ResumeMusic()
         {
-            audioSource.Play();
+            if(!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
 
         public void PauseAllSFX()
