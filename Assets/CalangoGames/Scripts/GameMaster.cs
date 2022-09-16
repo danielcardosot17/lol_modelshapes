@@ -179,13 +179,13 @@ namespace CalangoGames
         public void PauseGame()
         {
             player.DisablePlayerInput();
-            audioManager.PauseMusic();
+            //audioManager.PauseMusic();
             ShowPauseGameCanvas();
         }
         public void ResumeGame()
         {
             player.EnablePlayerInput();
-            audioManager.ResumeMusic();
+            //audioManager.ResumeMusic();
             HidePauseGameCanvas();
         }
 

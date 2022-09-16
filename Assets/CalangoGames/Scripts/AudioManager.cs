@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CalangoGames
 {
@@ -9,6 +11,8 @@ namespace CalangoGames
     {
         [SerializeField] private List<Sound> soundEffcts;
         [SerializeField] private List<Sound> musics;
+        [SerializeField] private Slider volumeSlider;
+        [SerializeField] private TMP_Text volumeText;
         private AudioSource audioSource;
         private List<AudioSource> sfxSources;
 
@@ -82,6 +86,21 @@ namespace CalangoGames
                 sfx.Pause();
             }
         }
+
+        public void PlayButtonSFX()
+        {
+            PlaySFX("button");
+        }
+
+        public void ChangeVolume()
+        {
+            AudioListener.volume = volumeSlider.value;
+        }
+        public void ChangeVolumeText()
+        {
+            volumeText.text = (volumeSlider.value * 100).ToString("N0");
+        }
+
         public static IEnumerator DoAfterTimeCoroutine(float time, Action action)
         {
             yield return new WaitForSeconds(time);
