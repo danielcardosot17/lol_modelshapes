@@ -153,10 +153,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1644540342}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.03, y: 0}
-  m_AnchorMax: {x: 0.97, y: 0.5}
+  m_AnchorMin: {x: 0.1, y: 0.1}
+  m_AnchorMax: {x: 0.9, y: 0.9}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.45
+  m_fontSize: 35.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -427,14 +427,14 @@ MonoBehaviour:
     category: sfx
     clip: {fileID: 8300000, guid: 3cda3ec17720013439cf682bd06cc97b, type: 3}
     priority: 128
-    volume: 0.7
+    volume: 0.5
     pitch: 1
     loop: 0
   - name: Stick
     category: sfx
     clip: {fileID: 8300000, guid: fe10bf6fefb928b49894217942806647, type: 3}
     priority: 128
-    volume: 1
+    volume: 0.8
     pitch: 1.5
     loop: 0
   - name: Boat_Sea
@@ -1041,7 +1041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &319245163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1301,7 +1301,6 @@ MonoBehaviour:
   pausedText: {fileID: 1399335473}
   restartGameText: {fileID: 1707932280}
   congratsText: {fileID: 1084054959}
-  letsBuildText: {fileID: 1614900665}
   levelNameText: {fileID: 13737743}
   howToPlayText: {fileID: 1240445899}
   startGameText: {fileID: 1591545818}
@@ -2097,7 +2096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &605974619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3419,7 +3418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &988116456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4250,6 +4249,7 @@ MonoBehaviour:
   optionsMenuCanvas: {fileID: 368217024}
   restartGameConfirmationCanvas: {fileID: 629482067}
   exampleCanvas: {fileID: 988116455}
+  duringGameCanvas: {fileID: 1402813487}
   shapesTable: {fileID: 1255613074}
   updateTextEvent: {fileID: 11400000, guid: adbf113636340ed42a0eab205d16f69f, type: 2}
   showImageDuration: 10
@@ -4603,7 +4603,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.65
+  m_fontSize: 41.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5329,7 +5329,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.4
+  m_fontSize: 46.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6676,140 +6676,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591545816}
   m_CullTransparentMesh: 1
---- !u!1 &1614900663
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1614900664}
-  - component: {fileID: 1614900666}
-  - component: {fileID: 1614900665}
-  m_Layer: 5
-  m_Name: LetsBuild
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1614900664
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1614900663}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1644540342}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.03, y: 0.5}
-  m_AnchorMax: {x: 0.97, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1614900665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1614900663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'Let''s build:'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 185c3db4e79cd78438030b906fe54dd5, type: 2}
-  m_sharedMaterial: {fileID: -6615229382253530736, guid: 185c3db4e79cd78438030b906fe54dd5, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 40.9
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 1
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1614900666
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1614900663}
-  m_CullTransparentMesh: 1
 --- !u!1 &1644540341
 GameObject:
   m_ObjectHideFlags: 0
@@ -6827,7 +6693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1644540342
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6839,14 +6705,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1614900664}
   - {fileID: 13737742}
   m_Father: {fileID: 988116459}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.01, y: 0.65}
-  m_AnchorMax: {x: 0.3, y: 0.875}
-  m_AnchoredPosition: {x: 170, y: -338}
+  m_AnchorMin: {x: 0.45, y: 0.9}
+  m_AnchorMax: {x: 0.67, y: 0.99}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1644540343
@@ -7770,23 +7635,40 @@ MonoBehaviour:
   levels:
   - levelName: Triangle
     shapeText: Triangle
+    exampleImageSprite: {fileID: 21300000, guid: 8233fb46132354845aa8e83af6289211, type: 3}
+    imageColor: {r: 0.6862745, g: 0.8666667, b: 0.23137255, a: 1}
   - levelName: Square
     shapeText: Square
+    exampleImageSprite: {fileID: 21300000, guid: 320f3d02abef645469499a9fea33ba24, type: 3}
+    imageColor: {r: 0.7529412, g: 0.19607843, b: 0.19607843, a: 1}
   - levelName: Rectangle
     shapeText: Rectangle
+    exampleImageSprite: {fileID: 21300000, guid: a1aa832cb34be7442ac0ecbd19e1604f, type: 3}
+    imageColor: {r: 0, g: 0.18039216, b: 0.6313726, a: 1}
   - levelName: House
     shapeText: House
+    exampleImageSprite: {fileID: 21300000, guid: 12f660f4010bebd4db2c1230e1979a5b, type: 3}
+    imageColor: {r: 1, g: 1, b: 1, a: 1}
   - levelName: Car
     shapeText: Car
+    exampleImageSprite: {fileID: 21300000, guid: 3c9578b0d2d80744f85e8adaa1a6e5d1, type: 3}
+    imageColor: {r: 1, g: 1, b: 1, a: 1}
   - levelName: Windmill
     shapeText: Windmill
+    exampleImageSprite: {fileID: 21300000, guid: 4eb6f0411e62dcd46a55464f6b992bab, type: 3}
+    imageColor: {r: 1, g: 1, b: 1, a: 1}
   - levelName: Boat
     shapeText: Boat
+    exampleImageSprite: {fileID: 21300000, guid: 2ba078ed94faca54fb1779bc62109e27, type: 3}
+    imageColor: {r: 1, g: 1, b: 1, a: 1}
   - levelName: Star
     shapeText: Star
+    exampleImageSprite: {fileID: 21300000, guid: 0ce118461e585014eb08e17bc3cd1ae1, type: 3}
+    imageColor: {r: 0.5686275, g: 0.90196085, b: 0.27450982, a: 1}
   transitionAnimator: {fileID: 1861730167}
   transitionTime: 1
   levelFinishedEvent: {fileID: 11400000, guid: 30c848c8137f0bd43b4f7ddc9729b78f, type: 2}
+  exampleImage: {fileID: 1023401403}
   occupyEvent: {fileID: 11400000, guid: a823e0b1f3ba6244bb2e2d3a17784774, type: 2}
 --- !u!4 &1938216703
 Transform:

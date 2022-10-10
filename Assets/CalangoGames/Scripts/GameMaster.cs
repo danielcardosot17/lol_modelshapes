@@ -14,6 +14,7 @@ namespace CalangoGames
         [SerializeField] private GameObject optionsMenuCanvas;
         [SerializeField] private GameObject restartGameConfirmationCanvas;
         [SerializeField] private GameObject exampleCanvas;
+        [SerializeField] private GameObject duringGameCanvas;
         [SerializeField] private GameObject shapesTable;
         [SerializeField] private GameEventSO updateTextEvent;
         [SerializeField] private float showImageDuration;
@@ -108,15 +109,24 @@ namespace CalangoGames
 
         public void LevelIsFinished()
         {
-
+            BuildingShapeAnimation();
+            HideDuringGameCanvas();
             StartCoroutine(DoAfterTimeCoroutine(buildingShapeAnimationDuration, () => {
-                BuildingShapeAnimation();
+                StartCoroutine(LevelFinishedAnimation());
             }));
+        }
+
+        private void HideDuringGameCanvas()
+        {
+            duringGameCanvas.SetActive(false);
+        }
+        private void ShowDuringGameCanvas()
+        {
+            duringGameCanvas.SetActive(true);
         }
 
         private void BuildingShapeAnimation()
         {
-            StartCoroutine(LevelFinishedAnimation());
         }
 
         private IEnumerator LevelFinishedAnimation()
@@ -156,6 +166,7 @@ namespace CalangoGames
             lolAdapter.SaveGame();
             HideCongratulationCanvas();
             ShowExampleCanvasAndShapesTable();
+            ShowDuringGameCanvas();
         }
 
         public void ShowBackgroundImageForSeconds()

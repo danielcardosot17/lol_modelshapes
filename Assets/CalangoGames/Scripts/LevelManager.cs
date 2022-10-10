@@ -1,3 +1,4 @@
+using log4net.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,11 +15,14 @@ namespace CalangoGames
     {
         public string levelName;
         public string shapeText;
+        public Sprite exampleImageSprite;
+        public Color imageColor;
 
         private bool isLoaded = false;
         public bool IsLoaded { get => isLoaded; set => isLoaded = value; }
 
         private bool isFinished = false;
+
         public bool IsFinished { get => isFinished; set => isFinished = value; }
     }
 
@@ -28,6 +32,7 @@ namespace CalangoGames
         [SerializeField] private Animator transitionAnimator;
         [SerializeField] private float transitionTime = 1f;
         [SerializeField] private GameEventSO levelFinishedEvent;
+        [SerializeField] private Image exampleImage;
 
         private TextManager textManager;
 
@@ -124,7 +129,14 @@ namespace CalangoGames
             StartCoroutine(DoAfterTimeCoroutine(1, () => {
                 textManager.UpdateLevelNameText(level.shapeText);
                 textManager.SpeakText(level.shapeText.ToLower());
+                UpdateShapeExampleImage(level);
             }));
+        }
+
+        private void UpdateShapeExampleImage(Level level)
+        {
+            exampleImage.sprite = level.exampleImageSprite;
+            exampleImage.color = level.imageColor;
         }
 
         public void ResetCameraPositionAndSize()
