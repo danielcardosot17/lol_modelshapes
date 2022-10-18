@@ -182,11 +182,11 @@ namespace CalangoGames
 
             if (shape.ShapeType == ShapeType.Clay)
             {
-                audioManager.PlaySFX("Clay");
+                audioManager.PlayStickOrClaySFX("Clay");
             }
             else
             {
-                audioManager.PlaySFX("Stick");
+                audioManager.PlayStickOrClaySFX("Stick");
             }
         }
 

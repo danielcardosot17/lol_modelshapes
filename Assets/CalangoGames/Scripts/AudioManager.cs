@@ -13,9 +13,10 @@ namespace CalangoGames
         [SerializeField] private List<Sound> musics;
         [SerializeField] private Slider volumeSlider;
         [SerializeField] private TMP_Text volumeText;
+        [SerializeField][Range(0.0f, 10f)] private float stickAndScrewTimer = 0;
         private AudioSource audioSource;
         private List<AudioSource> sfxSources;
-
+        private float sfxTimer = 0;
 
         private void Awake() {
             sfxSources = new List<AudioSource>();
@@ -105,6 +106,23 @@ namespace CalangoGames
         {
             yield return new WaitForSeconds(time);
             action();
+        }
+
+        public void PlayStickOrClaySFX(string stickOrClay)
+        {
+            if (sfxTimer <= 0)
+            {
+                PlaySFX(stickOrClay);
+                sfxTimer = stickAndScrewTimer;
+            }
+        }
+
+        private void Update()
+        {
+            if(sfxTimer > 0)
+            {
+                sfxTimer -= Time.deltaTime;
+            }
         }
     }
 }
