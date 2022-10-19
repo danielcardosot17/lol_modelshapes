@@ -7264,6 +7264,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
+  - levelName: Rhombus
+    shapeText: Rhombus
+    exampleImageSprite: {fileID: 21300000, guid: 0c648efed5fd60a47975f4564d9ff942, type: 3}
+    imageColor: {r: 0.81960785, g: 0.6117647, b: 0.39215687, a: 1}
   - levelName: Boat
     shapeText: Boat
     exampleImageSprite: {fileID: 21300000, guid: 2ba078ed94faca54fb1779bc62109e27, type: 3}
