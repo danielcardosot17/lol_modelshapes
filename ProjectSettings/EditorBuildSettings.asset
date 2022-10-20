@@ -20,5 +20,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rhombus.unity
     guid: 44b2730a0bf79cd4a869cc9237deacac
+  - enabled: 1
+    path: Assets/Scenes/Pentagon.unity
+    guid: a8edeb6125c1d154194ecf3a15c3d57e
+  - enabled: 1
+    path: Assets/Scenes/Trapezoid.unity
+    guid: 55f776c46859ae6439122636c92ccb28
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 99edbec24b9021443958511ab80a30e7, type: 2}
