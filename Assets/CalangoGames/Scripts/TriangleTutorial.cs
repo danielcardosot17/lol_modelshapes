@@ -12,16 +12,21 @@ namespace CalangoGames
         [SerializeField] private Shape firstShape;
         [SerializeField] private Shape secondShape;
 
+        private TextManager textManager;
         private List<Shape> shapesInScene;
         private int currentStep = 0;
         // Start is called before the first frame update
         void Start()
         {
-            foreach(GameObject go in arrows)
+            textManager = FindObjectOfType<TextManager>();
+            foreach (GameObject go in arrows)
             {
                 go.SetActive(false);
             }
-            StartArrowTutorial();
+            // some time delay to read the text
+            StartCoroutine(DoAfterTimeCoroutine(3, () => {
+                StartArrowTutorial();
+            }));
         }
 
         public void StartArrowTutorial()
@@ -53,6 +58,7 @@ namespace CalangoGames
         {
             arrows[0].SetActive(true);
             currentStep = 0;
+            textManager.SpeakText("tutorialarrow0");
         }
 
         public void ShowArrow1()
@@ -60,6 +66,7 @@ namespace CalangoGames
             arrows[0].SetActive(false);
             arrows[1].SetActive(true);
             currentStep = 1;
+            textManager.SpeakText("tutorialarrow1");
         }
         public void ShowArrow2orEndTutorial()
         {
@@ -77,6 +84,7 @@ namespace CalangoGames
         {
             gameObject.SetActive(false);
             SetRemainingShapesSelectable();
+            textManager.SpeakText("tutorialend");
         }
 
         private void SetRemainingShapesSelectable()
@@ -93,12 +101,20 @@ namespace CalangoGames
             arrows[2].SetActive(true);
             currentStep = 2;
             SetShapeSelectable(secondShape);
+            textManager.SpeakText("tutorialarrow2");
         }
         public void ShowArrow3()
         {
             arrows[2].SetActive(false);
             arrows[3].SetActive(true);
             currentStep = 3;
+            textManager.SpeakText("tutorialarrow3");
+        }
+
+        public static IEnumerator DoAfterTimeCoroutine(float time, Action action)
+        {
+            yield return new WaitForSeconds(time);
+            action();
         }
     }
 }
