@@ -1042,7 +1042,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &319245163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4399,7 +4399,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.6
+  m_fontSize: 41.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5125,7 +5125,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.45
+  m_fontSize: 46.4
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7264,6 +7264,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
+  - levelName: Triangle
+    shapeText: Triangle
+    exampleImageSprite: {fileID: 21300000, guid: 8233fb46132354845aa8e83af6289211, type: 3}
+    imageColor: {r: 0.6862745, g: 0.8666667, b: 0.23137255, a: 1}
+  - levelName: Boat
+    shapeText: Boat
+    exampleImageSprite: {fileID: 21300000, guid: 2ba078ed94faca54fb1779bc62109e27, type: 3}
+    imageColor: {r: 1, g: 1, b: 1, a: 1}
   - levelName: Hexagon
     shapeText: Hexagon
     exampleImageSprite: {fileID: 21300000, guid: b9db026b54953f64084c32e144a883c2, type: 3}
@@ -7280,14 +7288,6 @@ MonoBehaviour:
     shapeText: Rhombus
     exampleImageSprite: {fileID: 21300000, guid: 0c648efed5fd60a47975f4564d9ff942, type: 3}
     imageColor: {r: 0.81960785, g: 0.6117647, b: 0.39215687, a: 1}
-  - levelName: Boat
-    shapeText: Boat
-    exampleImageSprite: {fileID: 21300000, guid: 2ba078ed94faca54fb1779bc62109e27, type: 3}
-    imageColor: {r: 1, g: 1, b: 1, a: 1}
-  - levelName: Triangle
-    shapeText: Triangle
-    exampleImageSprite: {fileID: 21300000, guid: 8233fb46132354845aa8e83af6289211, type: 3}
-    imageColor: {r: 0.6862745, g: 0.8666667, b: 0.23137255, a: 1}
   - levelName: Square
     shapeText: Square
     exampleImageSprite: {fileID: 21300000, guid: 320f3d02abef645469499a9fea33ba24, type: 3}

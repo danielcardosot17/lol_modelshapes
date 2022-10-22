@@ -20,6 +20,9 @@ namespace CalangoGames
         public ShapeOutline Outline { get => outline; }
         public ShapeType ShapeType { get => shapeType; set => shapeType = value; }
         public ShapeAngle ShapeAngle { get => shapeAngle; set => shapeAngle = value; }
+        public GameEventSO SelectedEvent { get => selectedEvent; set => selectedEvent = value; }
+
+        private GameEventSO selectedEvent;
 
         private void Start() {
             outline = GetComponentInChildren<ShapeOutline>();
@@ -29,6 +32,7 @@ namespace CalangoGames
         {
             isSelected = true;
             outline?.Enable();
+            selectedEvent?.Raise();
         }
 
         public void Deselect()
