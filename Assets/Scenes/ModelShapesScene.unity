@@ -207,7 +207,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.75
+  m_fontSize: 35.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4399,7 +4399,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.6
+  m_fontSize: 41.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5125,7 +5125,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.45
+  m_fontSize: 46.4
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7265,6 +7265,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
+  - levelName: Car
+    shapeText: Car
+    exampleImageSprite: {fileID: 21300000, guid: 3c9578b0d2d80744f85e8adaa1a6e5d1, type: 3}
+    imageColor: {r: 1, g: 1, b: 1, a: 1}
   - levelName: Boat
     shapeText: Boat
     exampleImageSprite: {fileID: 21300000, guid: 2ba078ed94faca54fb1779bc62109e27, type: 3}
@@ -7300,10 +7304,6 @@ MonoBehaviour:
   - levelName: House
     shapeText: House
     exampleImageSprite: {fileID: 21300000, guid: 12f660f4010bebd4db2c1230e1979a5b, type: 3}
-    imageColor: {r: 1, g: 1, b: 1, a: 1}
-  - levelName: Car
-    shapeText: Car
-    exampleImageSprite: {fileID: 21300000, guid: 3c9578b0d2d80744f85e8adaa1a6e5d1, type: 3}
     imageColor: {r: 1, g: 1, b: 1, a: 1}
   - levelName: Windmill
     shapeText: Windmill
