@@ -517,7 +517,7 @@ MonoBehaviour:
     loop: 1
   volumeSlider: {fileID: 1962278639}
   volumeText: {fileID: 888292041}
-  stickAndScrewTimer: 5
+  stickAndScrewTimer: 8
 --- !u!4 &81404665
 Transform:
   m_ObjectHideFlags: 0
@@ -7268,26 +7268,6 @@ MonoBehaviour:
     shapeText: Triangle
     exampleImageSprite: {fileID: 21300000, guid: 8233fb46132354845aa8e83af6289211, type: 3}
     imageColor: {r: 0.6862745, g: 0.8666667, b: 0.23137255, a: 1}
-  - levelName: Boat
-    shapeText: Boat
-    exampleImageSprite: {fileID: 21300000, guid: 2ba078ed94faca54fb1779bc62109e27, type: 3}
-    imageColor: {r: 1, g: 1, b: 1, a: 1}
-  - levelName: Hexagon
-    shapeText: Hexagon
-    exampleImageSprite: {fileID: 21300000, guid: b9db026b54953f64084c32e144a883c2, type: 3}
-    imageColor: {r: 1, g: 1, b: 1, a: 1}
-  - levelName: Trapezoid
-    shapeText: Trapezoid
-    exampleImageSprite: {fileID: 21300000, guid: 4f584ae0d5c7db249a1729378383d61f, type: 3}
-    imageColor: {r: 1, g: 1, b: 1, a: 1}
-  - levelName: Pentagon
-    shapeText: Pentagon
-    exampleImageSprite: {fileID: 21300000, guid: ee72f44d97818474bbfa51a4b4a62cb5, type: 3}
-    imageColor: {r: 1, g: 1, b: 1, a: 1}
-  - levelName: Rhombus
-    shapeText: Rhombus
-    exampleImageSprite: {fileID: 21300000, guid: 0c648efed5fd60a47975f4564d9ff942, type: 3}
-    imageColor: {r: 0.81960785, g: 0.6117647, b: 0.39215687, a: 1}
   - levelName: Square
     shapeText: Square
     exampleImageSprite: {fileID: 21300000, guid: 320f3d02abef645469499a9fea33ba24, type: 3}
@@ -7296,6 +7276,22 @@ MonoBehaviour:
     shapeText: Rectangle
     exampleImageSprite: {fileID: 21300000, guid: a1aa832cb34be7442ac0ecbd19e1604f, type: 3}
     imageColor: {r: 0, g: 0.18039216, b: 0.6313726, a: 1}
+  - levelName: Rhombus
+    shapeText: Rhombus
+    exampleImageSprite: {fileID: 21300000, guid: 0c648efed5fd60a47975f4564d9ff942, type: 3}
+    imageColor: {r: 0.81960785, g: 0.6117647, b: 0.39215687, a: 1}
+  - levelName: Trapezoid
+    shapeText: Trapezoid
+    exampleImageSprite: {fileID: 21300000, guid: 4f584ae0d5c7db249a1729378383d61f, type: 3}
+    imageColor: {r: 1, g: 1, b: 1, a: 1}
+  - levelName: Pentagon
+    shapeText: Pentagon
+    exampleImageSprite: {fileID: 21300000, guid: ee72f44d97818474bbfa51a4b4a62cb5, type: 3}
+    imageColor: {r: 1, g: 1, b: 1, a: 1}
+  - levelName: Hexagon
+    shapeText: Hexagon
+    exampleImageSprite: {fileID: 21300000, guid: b9db026b54953f64084c32e144a883c2, type: 3}
+    imageColor: {r: 1, g: 1, b: 1, a: 1}
   - levelName: House
     shapeText: House
     exampleImageSprite: {fileID: 21300000, guid: 12f660f4010bebd4db2c1230e1979a5b, type: 3}
@@ -7307,6 +7303,10 @@ MonoBehaviour:
   - levelName: Windmill
     shapeText: Windmill
     exampleImageSprite: {fileID: 21300000, guid: 4eb6f0411e62dcd46a55464f6b992bab, type: 3}
+    imageColor: {r: 1, g: 1, b: 1, a: 1}
+  - levelName: Boat
+    shapeText: Boat
+    exampleImageSprite: {fileID: 21300000, guid: 2ba078ed94faca54fb1779bc62109e27, type: 3}
     imageColor: {r: 1, g: 1, b: 1, a: 1}
   - levelName: Star
     shapeText: Star
